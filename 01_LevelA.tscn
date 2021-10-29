@@ -110,6 +110,7 @@ script = ExtResource( 6 )
 [node name="Player" type="KinematicBody2D" parent="Game"]
 position = Vector2( 76.8203, 214.82 )
 script = ExtResource( 4 )
+speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 position = Vector2( -120.373, -127.368 )
@@ -127,6 +128,7 @@ drag_margin_bottom = 0.1
 position = Vector2( 0, 0.305107 )
 frames = SubResource( 1 )
 animation = "Walk"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Player"]

@@ -2,9 +2,9 @@ class_name Player
 
 extends KinematicBody2D
 
-const gravity = 8.1 
-const speed = 50						# Geschwindigkei
-const jump_force = -240			
+export var gravity = 8.1 
+export var speed = 50						# Geschwindigkei
+export var jump_force = -240			
 
 var velocity = Vector2.ZERO
 
