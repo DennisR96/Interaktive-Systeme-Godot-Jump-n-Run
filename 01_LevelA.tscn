@@ -127,7 +127,6 @@ drag_margin_bottom = 0.1
 position = Vector2( 0, 0.305107 )
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Player"]
