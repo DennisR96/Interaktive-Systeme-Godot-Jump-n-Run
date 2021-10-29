@@ -10,6 +10,9 @@ Gegner
 - Angreifer passiv
 - Anfreifer aktiv
 Tutorial
+Anzeige
+- Leben
+Speicherpunkte
 
 Nice-To-Have:
 - Teleporter (Röhren in Mario)
