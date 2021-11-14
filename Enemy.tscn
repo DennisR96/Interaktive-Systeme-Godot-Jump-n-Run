@@ -22,7 +22,7 @@ frames = SubResource( 1 )
 animation = "walk"
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

@@ -7,14 +7,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -22,6 +22,7 @@ animations = [ {
 extents = Vector2( 8.8335, 4.2431 )
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 46.4812, -57.7875 )
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -40,10 +41,16 @@ drag_margin_bottom = 0.1
 position = Vector2( 76.8203, 215.125 )
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 76.4298, 216.251 )
+position = Vector2( 74.2308, 217.115 )
 scale = Vector2( 1.17043, 1.44381 )
 shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 95.8992, 214.659 )
+z_as_relative = false
+__meta__ = {
+"_gizmo_extents_": 4.8
+}
