@@ -15,7 +15,7 @@ var Projectile = preload("res://Projectile.tscn")
 func shoot():
 	var p = Projectile.instance()
 	#owner.add_child(p)
-	p.transform = $Muzzle.transform
+	p.transform = $Muzzle.transform	
 
 
 func _physics_process(delta):
