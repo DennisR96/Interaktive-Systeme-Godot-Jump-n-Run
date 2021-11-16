@@ -10,9 +10,7 @@ var velocity = Vector2()
 
 var Projectile = preload("res://Projectile.tscn") 
 
-
-
-func shoot():
+func shoot():								# Marker 1
 	var p = Projectile.instance()
 	#owner.add_child(p)
 	p.transform = $Muzzle.transform	

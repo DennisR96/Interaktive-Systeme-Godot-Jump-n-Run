@@ -16,9 +16,9 @@ func _physics_process(delta):
 	
 	# Wall Detectioon
 	if direction == 1:
-		$AnimatedSprite.flip_h = false
-	else:
 		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.flip_h = false
 		
 
 	$AnimatedSprite.play("walk")
