@@ -1,7 +1,7 @@
 # Interaktive-Systeme-Godot-Jump-n-Run
 
-Offen:
-Must-Have:
+## Offen:
+###### Must-Have:
 
 Objekte
 - Hindernisse 
@@ -20,14 +20,15 @@ Anzeige
 Speicherpunkte
 
 
-Nice-To-Have:
+###### Nice-To-Have:
 - Teleporter (Röhren in Mario)
-
 
 Ideen:
 - Graue Welt bunt färben
-- Sroryline
 - Endgegner
 
 
-Abgeschlossen:
+## Abgeschlossen:
+- Game erstellen
+- Asset-Set auswählen
+- Storyline ausdenken (Froschkönig)
