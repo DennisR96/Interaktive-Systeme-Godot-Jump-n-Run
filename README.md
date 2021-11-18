@@ -1,7 +1,7 @@
 # Interaktive-Systeme-Godot-Jump-n-Run
 
 ## Offen:
-###### Must-Have:
+### Must-Have:
 
 Objekte
 - Hindernisse 
@@ -20,7 +20,7 @@ Anzeige
 Speicherpunkte
 
 
-###### Nice-To-Have:
+### Nice-To-Have:
 - Teleporter (Röhren in Mario)
 
 Ideen:
