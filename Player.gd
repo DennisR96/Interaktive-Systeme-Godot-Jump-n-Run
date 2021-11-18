@@ -20,15 +20,15 @@ func _physics_process(delta):
 	# Walking Animation
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("Walk")
 		$AnimatedSprite.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
-		$AnimatedSprite.play ("walk")
+		$AnimatedSprite.play ("Walk")
 		$AnimatedSprite.flip_h = true
 	else:
 		velocity.x = 0
-		$AnimatedSprite.play("idle")
+		$AnimatedSprite.play("Idle")
 		
 	# Jumping Animation
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():

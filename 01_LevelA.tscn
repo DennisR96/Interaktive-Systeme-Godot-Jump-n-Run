@@ -88,14 +88,14 @@ scale = Vector2( -1432.13, 24.0619 )
 [node name="Game" type="Node" parent="."]
 script = ExtResource( 6 )
 
-[node name="Player" parent="Game" instance=ExtResource( 2 )]
-
 [node name="TileMap" type="TileMap" parent="Game"]
 position = Vector2( 123.843, 172.239 )
 tile_set = SubResource( 4 )
 cell_size = Vector2( 18, 18 )
 format = 1
 tile_data = PoolIntArray( -131074, 0, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196611, 0, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0 )
+
+[node name="Player" parent="Game" instance=ExtResource( 2 )]
 
 [node name="Area2D" type="Area2D" parent="Game"]
 position = Vector2( 76.8203, 214.82 )
