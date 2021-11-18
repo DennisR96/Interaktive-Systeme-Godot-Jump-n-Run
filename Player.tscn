@@ -160,6 +160,7 @@ extents = Vector2( 10.8791, 9.78374 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 46.4812, -57.7875 )
+collision_mask = 30
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
