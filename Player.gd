@@ -17,22 +17,30 @@ func shoot():								# Marker 1
 
 
 func _physics_process(delta):
-	# Walking Animation
+	# Walking 
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
-		$AnimatedSprite.play("Walk")
 		$AnimatedSprite.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
-		$AnimatedSprite.play ("Walk")
 		$AnimatedSprite.flip_h = true
 	else:
 		velocity.x = 0
-		$AnimatedSprite.play("Idle")
 		
-	# Jumping Animation
+	# Jumping 
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = jump_force
+		
+	# Play Animation
+	if velocity.y < 0:
+		$AnimatedSprite.play("Jump")
+	elif velocity.y > 0:
+		$AnimatedSprite.play("Fall")
+	elif velocity.x != 0 and velocity.y == 0:
+		$AnimatedSprite.play("Walk")
+	else:
+		$AnimatedSprite.play("Idle")
+		
 	
 	if Input.is_action_just_pressed("ui_focus_next"):
 		shoot()
