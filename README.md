@@ -32,3 +32,11 @@ Ideen:
 - Game erstellen
 - Asset-Set auswählen
 - Storyline ausdenken (Froschkönig)
+
+## Anleitung
+Problem Sprite blurry -> Lösung: Sprite auswählen, "Import" (oben links) auswählen, "Filer"-Box ausstellen, "Neuimport" anklicken
+
+## Links
+Pixel Adventure 1: https://pixelfrog-assets.itch.io/pixel-adventure-1
+Pixel Adventure 2: https://pixelfrog-assets.itch.io/pixel-adventure-2
+
