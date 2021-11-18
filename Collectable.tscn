@@ -109,7 +109,7 @@ animations = [ {
 "frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": false,
 "name": "Collected",
-"speed": 6.0
+"speed": 15.0
 } ]
 
 [node name="Collectable" type="Area2D"]
@@ -123,7 +123,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 25 )
 animation = "Apple"
-frame = 8
+frame = 16
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_Collectable_body_entered"]

@@ -15,8 +15,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 [node name="Enemy" type="KinematicBody2D"]
-collision_layer = 16
-collision_mask = 3
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

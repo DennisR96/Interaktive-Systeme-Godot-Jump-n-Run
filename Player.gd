@@ -5,6 +5,7 @@ extends KinematicBody2D
 export var GRAVITY = 8.1 
 export var SPEED = 50						# Geschwindigkei
 export var jump_force = -240			
+var collectables = 0
 
 var velocity = Vector2()
 
@@ -47,4 +48,12 @@ func _physics_process(delta):
 		
 	velocity.y += GRAVITY
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	# Wenn alle Items eingesammelt
+	if collectables == 2:
+		#get_tree().change_scene("res://01_LevelA.tscn")
+		print("Winner!")
 
+func add_collectable():
+	collectables = collectables + 1
+	print("Number Collectables: ", collectables)
