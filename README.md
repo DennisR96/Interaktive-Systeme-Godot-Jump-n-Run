@@ -34,7 +34,7 @@ Ideen:
 - Storyline ausdenken (Froschkönig)
 
 ## Anleitung
-Problem Sprite blurry -> Lösung: Sprite auswählen, "Import" (oben links) auswählen, "Filer"-Box ausstellen, "Neuimport" anklicken
+Problem Sprite blurry -> Lösung: Sprite auswählen, "Import" (oben links) auswählen, auf Vorlage "2D Pixel" wechseln, "Neuimport" anklicken
 
 ## Links
 Pixel Adventure 1: https://pixelfrog-assets.itch.io/pixel-adventure-1
