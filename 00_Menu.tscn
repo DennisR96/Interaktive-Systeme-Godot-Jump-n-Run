@@ -1,6 +1,159 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://00_Menu.gd" type="Script" id=1]
+[ext_resource path="res://PixelAdventure/Menu/Text/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://PixelAdventure/Background/Yellow.png" type="Texture" id=3]
+[ext_resource path="res://PixelAdventure/Background/Brown.png" type="Texture" id=4]
+[ext_resource path="res://PixelAdventure/Background/Blue.png" type="Texture" id=5]
+[ext_resource path="res://PixelAdventure/Background/Purple.png" type="Texture" id=6]
+[ext_resource path="res://PixelAdventure/Background/Pink.png" type="Texture" id=7]
+[ext_resource path="res://PixelAdventure/Background/Green.png" type="Texture" id=8]
+[ext_resource path="res://PixelAdventure/Background/Gray.png" type="Texture" id=9]
+[ext_resource path="res://PixelAdventure/Menu/Buttons/Play.png" type="Texture" id=10]
+[ext_resource path="res://PixelAdventure/Menu/Buttons/Previous.png" type="Texture" id=11]
+[ext_resource path="res://PixelAdventure/Menu/Buttons/Settings.png" type="Texture" id=12]
+
+[sub_resource type="TileSet" id=131]
+0/name = "Blue"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Brown"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Gray"
+2/texture = ExtResource( 9 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Green"
+3/texture = ExtResource( 8 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Pink"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Purple"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Yellow"
+6/texture = ExtResource( 3 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 64, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+
+[sub_resource type="StyleBoxFlat" id=132]
+bg_color = Color( 0.388235, 0.282353, 0.282353, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=133]
+bg_color = Color( 0.184314, 0.141176, 0.141176, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=134]
+bg_color = Color( 0.301961, 0.215686, 0.215686, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
 
 [node name="Menu" type="Control"]
 anchor_left = 0.5
@@ -11,37 +164,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 131 )
+format = 1
+tile_data = PoolIntArray( 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 196604, 2, 0, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 327676, 2, 0, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -71.0
-margin_top = 90.0
-margin_right = 92.0
-margin_bottom = -102.0
+anchor_bottom = 0.5
+margin_left = -81.5
+margin_top = -46.0
+margin_right = 81.5
+margin_bottom = 46.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start" type="Button" parent="VBoxContainer"]
+margin_top = 9.0
 margin_right = 163.0
-margin_bottom = 20.0
+margin_bottom = 31.0
+custom_styles/hover = SubResource( 132 )
+custom_styles/pressed = SubResource( 133 )
+custom_styles/normal = SubResource( 134 )
+custom_fonts/font = SubResource( 1 )
 text = "Start"
+icon = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Option" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
+margin_top = 35.0
 margin_right = 163.0
-margin_bottom = 44.0
+margin_bottom = 57.0
+custom_styles/hover = SubResource( 132 )
+custom_styles/pressed = SubResource( 133 )
+custom_styles/normal = SubResource( 134 )
+custom_fonts/font = SubResource( 2 )
 text = "Options"
+icon = ExtResource( 12 )
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
+margin_top = 61.0
 margin_right = 163.0
-margin_bottom = 68.0
+margin_bottom = 83.0
+custom_styles/hover = SubResource( 132 )
+custom_styles/pressed = SubResource( 133 )
+custom_styles/normal = SubResource( 134 )
+custom_fonts/font = SubResource( 3 )
 text = "Exit"
+icon = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
