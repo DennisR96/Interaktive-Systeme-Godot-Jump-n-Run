@@ -164,7 +164,6 @@ collision_mask = 30
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2( -43.5527, 87.452 )
 rotation = 3.14159
 scale = Vector2( 1432.13, -24.0619 )
@@ -180,7 +179,7 @@ drag_margin_bottom = 0.1
 position = Vector2( 76.8203, 215.125 )
 frames = SubResource( 31 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
