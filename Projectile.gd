@@ -1,16 +1,18 @@
 extends Area2D
 
+const SPEED = 100
+var velocity = Vector2()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
+	
+func _physics_process(delta):
+	velocity.x = SPEED * delta
+	translate(velocity)
+	$AnimatedSprite.play("shoot")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func _on_VisibilityNotifier2D_screen_exited():
+	# Projectile entfernen wenn es aus dem Screen geht
+	queue_free()
