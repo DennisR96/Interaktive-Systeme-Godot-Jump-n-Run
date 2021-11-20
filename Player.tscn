@@ -179,12 +179,12 @@ drag_margin_bottom = 0.1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 76.8203, 215.125 )
 frames = SubResource( 31 )
-animation = "Idle"
-frame = 2
+animation = "Hit"
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 76.2631, 218.279 )
+position = Vector2( 76.2631, 217.165 )
 scale = Vector2( 1.17043, 1.44381 )
 shape = SubResource( 32 )
 

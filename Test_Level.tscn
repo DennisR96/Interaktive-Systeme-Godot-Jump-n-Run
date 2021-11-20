@@ -1569,6 +1569,11 @@ shape = SubResource( 135 )
 ] instance=ExtResource( 3 )]
 position = Vector2( 211.633, 156.524 )
 
+[node name="Enemy2" parent="Game" groups=[
+"enemy",
+] instance=ExtResource( 3 )]
+position = Vector2( 119.113, 212.711 )
+
 [node name="Collectable" parent="Game" instance=ExtResource( 15 )]
 position = Vector2( 153.622, 215.601 )
 
