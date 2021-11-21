@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Run (32x32).png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Jump (32x32).png" type="Texture" id=4]
 [ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Hit (32x32).png" type="Texture" id=5]
 [ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Fall (32x32).png" type="Texture" id=6]
+[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Double Jump (32x32).png" type="Texture" id=7]
+[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Wall Jump (32x32).png" type="Texture" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -127,12 +129,61 @@ region = Rect2( 160, 0, 32, 32 )
 atlas = ExtResource( 5 )
 region = Rect2( 192, 0, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 7 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 7 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 8 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 8 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 8 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 8 )
+region = Rect2( 128, 0, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
@@ -149,42 +200,34 @@ animations = [ {
 "name": "Hit",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"loop": false,
+"name": "DoubleJump",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
 "loop": true,
-"name": "Jump",
+"name": "WallJump",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 9.95654, 9.16904 )
+extents = Vector2( 9.95654, 8.64011 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 4.25916, 2.54102 )
 collision_mask = 30
 script = ExtResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2( -43.5527, 87.452 )
-rotation = 3.14159
-scale = Vector2( 1432.13, -24.0619 )
-anchor_mode = 0
-current = true
-zoom = Vector2( 0.7, 0.7 )
-drag_margin_left = 0.1
-drag_margin_top = 0.1
-drag_margin_right = 0.1
-drag_margin_bottom = 0.1
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3.12819, -1.22392 )
 frames = SubResource( 31 )
-animation = "Hit"
-frame = 6
+animation = "Idle"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.902458, 0.259914 )
+position = Vector2( 2.40076, 1.94551 )
 scale = Vector2( 1.17043, 1.44381 )
 shape = SubResource( 32 )
 
