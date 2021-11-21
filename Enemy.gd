@@ -4,6 +4,7 @@ var speed = 30
 var velocity = Vector2()
 export var direction = -1
 export var detects_cliffs = true
+signal collectable_collected
 
 func _ready():
 	$AnimatedSprite.play("Walk")
@@ -42,8 +43,6 @@ func _on_top_checker_body_entered(body):
 # Wenn Player seitlich in Enemy reinläuft
 func _on_sides_checker_body_entered(body):
 	body.ouch(position.x)
-	$sides_checker.set_collision_layer_bit(4, false) #Vorübergehende Lösung
-	$sides_checker.set_collision_mask_bit(0, false) #Vorübergehende Lösung
 
 # Enemy löschen nach timeout
 func _on_Timer_timeout():

@@ -8,6 +8,8 @@ export var jump_force = -240
 var collectables = 0
 var playerHit = false
 
+signal player_hit
+
 const PROJECTILE = preload("res://Projectile.tscn")
 
 var velocity = Vector2(0,0)
@@ -28,7 +30,7 @@ func _physics_process(delta):
 #		velocity.x = 0
 		
 	# Jumping 
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_force
 		
 	# Projectile
@@ -58,7 +60,8 @@ func bounce():
 	velocity.y = jump_force * 0.7
 	
 # Enemy-Skript greift auf diese Funktion zu
-func ouch(enemyPosX):
+func ouch(var enemyPosX):
+	emit_signal("player_hit")
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
 	velocity.y = jump_force * 0.5 # Kleiner Sprung
 	
@@ -72,7 +75,17 @@ func ouch(enemyPosX):
 	
 	playerHit = true
 	$Timer.start()
+	
+func ouchFallzone():
+	emit_signal("player_hit")
+	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
+	velocity.y = jump_force * 0.7 # Kleiner Sprung
+	
+	position.x = 128
+	position.y = 192
+	
+	playerHit = true
+	$Timer.start()
 
 func _on_Timer_timeout():
 	playerHit = false
-	get_tree().change_scene("res://01_LevelA.tscn")
