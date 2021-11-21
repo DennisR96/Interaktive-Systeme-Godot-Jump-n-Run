@@ -6,10 +6,11 @@ export var GRAVITY = 8.1
 export var SPEED = 50						# Geschwindigkei
 export var jump_force = -240			
 var collectables = 0
+var playerHit = false
 
 const PROJECTILE = preload("res://Projectile.tscn")
 
-var velocity = Vector2()
+var velocity = Vector2(0,0)
 
 func _physics_process(delta):
 	# Walking 
@@ -23,8 +24,8 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = true
 		if sign($Position2D.position.x) == 1:
 			$Position2D.position.x *= -1
-	else:
-		velocity.x = 0
+#	else:
+#		velocity.x = 0
 		
 	# Jumping 
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
@@ -37,15 +38,41 @@ func _physics_process(delta):
 		projectile.position = $Position2D.global_position 
 		
 	# Play Animation
-	if velocity.y < 0:
+	if playerHit:
+		$AnimatedSprite.play("Hit")
+	elif velocity.y < 0 and not playerHit:
 		$AnimatedSprite.play("Jump")
-	elif velocity.y > 0:
+	elif velocity.y > 0 and not playerHit:
 		$AnimatedSprite.play("Fall")
-	elif velocity.x != 0 and velocity.y == 0:
+	elif velocity.x != 0 and velocity.y == 0 and not playerHit:
 		$AnimatedSprite.play("Walk")
 	else:
 		$AnimatedSprite.play("Idle")
 		
 	velocity.y += GRAVITY
 	velocity = move_and_slide(velocity, Vector2.UP)
+	velocity.x = lerp(velocity.x, 0, 0.2)
 	
+# Enemy-Skript greift auf diese Funktion zu
+func bounce():
+	velocity.y = jump_force * 0.7
+	
+# Enemy-Skript greift auf diese Funktion zu
+func ouch(enemyPosX):
+	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
+	velocity.y = jump_force * 0.5 # Kleiner Sprung
+	
+	if position.x < enemyPosX:
+		velocity.x = -400
+	elif position.x > enemyPosX:
+		velocity.x = 400
+	
+	Input.action_release("left")
+	Input.action_release("right")
+	
+	playerHit = true
+	$Timer.start()
+
+func _on_Timer_timeout():
+	playerHit = false
+	get_tree().change_scene("res://01_LevelA.tscn")

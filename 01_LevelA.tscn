@@ -160,6 +160,31 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Collectables" type="Node2D" parent="Game"]
+
+[node name="Collectable1" parent="Game/Collectables" instance=ExtResource( 11 )]
+position = Vector2( 64, 192 )
+
+[node name="Collectable2" parent="Game/Collectables" instance=ExtResource( 11 )]
+position = Vector2( 296, 160 )
+
+[node name="Collectable3" parent="Game/Collectables" instance=ExtResource( 11 )]
+position = Vector2( 504, 192 )
+
+[node name="Collectable4" parent="Game/Collectables" instance=ExtResource( 11 )]
+position = Vector2( 120, 32 )
+
+[node name="Collectable5" parent="Game/Collectables" instance=ExtResource( 11 )]
+position = Vector2( 40, 112 )
+
+[node name="Enemies" type="Node2D" parent="Game"]
+
+[node name="Enemy" parent="Game/Enemies" instance=ExtResource( 1 )]
+position = Vector2( 208, 208 )
+
+[node name="Enemy2" parent="Game/Enemies" instance=ExtResource( 1 )]
+position = Vector2( 264, 80 )
+
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 128, 192 )
 
@@ -251,31 +276,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Collectables" type="Node2D" parent="Game"]
-
-[node name="Collectable1" parent="Game/Collectables" instance=ExtResource( 11 )]
-position = Vector2( 64, 192 )
-
-[node name="Collectable2" parent="Game/Collectables" instance=ExtResource( 11 )]
-position = Vector2( 296, 160 )
-
-[node name="Collectable3" parent="Game/Collectables" instance=ExtResource( 11 )]
-position = Vector2( 504, 192 )
-
-[node name="Collectable4" parent="Game/Collectables" instance=ExtResource( 11 )]
-position = Vector2( 120, 32 )
-
-[node name="Collectable5" parent="Game/Collectables" instance=ExtResource( 11 )]
-position = Vector2( 40, 112 )
-
-[node name="Enemies" type="Node2D" parent="Game"]
-
-[node name="Enemy" parent="Game/Enemies" instance=ExtResource( 1 )]
-position = Vector2( 192, 208 )
-
-[connection signal="body_entered" from="Game/Area2D" to="Game" method="_on_Area2D_body_entered"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable2" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable3" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable4" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable5" to="Game/HUD" method="_on_collectable_collected"]
+[connection signal="body_entered" from="Game/Area2D" to="Game" method="_on_Area2D_body_entered"]

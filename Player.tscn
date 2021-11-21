@@ -223,7 +223,7 @@ script = ExtResource( 2 )
 position = Vector2( 3.12819, -1.22392 )
 frames = SubResource( 31 )
 animation = "Idle"
-frame = 8
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -236,3 +236,8 @@ position = Vector2( 21.6928, 0.636452 )
 __meta__ = {
 "_gizmo_extents_": 19.7
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
