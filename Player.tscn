@@ -223,7 +223,7 @@ script = ExtResource( 2 )
 position = Vector2( 3.12819, -1.22392 )
 frames = SubResource( 31 )
 animation = "Idle"
-frame = 3
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

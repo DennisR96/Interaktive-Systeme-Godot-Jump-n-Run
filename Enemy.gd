@@ -1,38 +1,27 @@
 extends KinematicBody2D
 
-const GRAVITY = 10
-const SPEED = 30
-const FLOOR = Vector2(0,-1)
-
 var velocity = Vector2()
-
-var direction = 1
+export var direction = -1
+export var detects_cliffs = true
 
 func _ready():
-	pass
-	
-func _physics_process(delta):
-	velocity.x = SPEED * direction
-	
-	# Wall Detectioon
 	if direction == 1:
 		$AnimatedSprite.flip_h = true
-	else:
-		$AnimatedSprite.flip_h = false
-		
+	$floor_checker.position.x = $CollisionShape2D2.shape.get_extents().x * direction
+	$floor_checker.enabled = detects_cliffs
 
-	$AnimatedSprite.play("walk")
-	velocity.y += GRAVITY
-	velocity = move_and_slide(velocity, FLOOR)
-
-	if is_on_wall():
+func _physics_process(delta):
+	
+	if is_on_wall() or not $floor_checker.is_colliding() and detects_cliffs and is_on_floor():
 		direction = direction * -1
-		$RayCast2D.position.x *= -1
-		
-	if $RayCast2D.is_colliding() == false:
-		direction = direction * -1
-		$RayCast2D.position.x *= -1
-
+		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
+		$floor_checker.position.x = $CollisionShape2D2.shape.get_extents().x * direction
+	
+	velocity.y += 20
+	
+	velocity.x = 30 * direction
+	
+	velocity = move_and_slide(velocity, Vector2.UP)
 
 
 

@@ -1534,7 +1534,7 @@ scale = Vector2( -1432.13, 24.0619 )
 script = ExtResource( 6 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( -35.6621, -45.7084 )
+position = Vector2( 45.0857, 206.416 )
 
 [node name="TileMapAlt" type="TileMap" parent="Game"]
 position = Vector2( 123.843, 172.239 )
@@ -1567,7 +1567,7 @@ shape = SubResource( 117 )
 [node name="Enemy" parent="Game" groups=[
 "enemy",
 ] instance=ExtResource( 3 )]
-position = Vector2( 211.633, 156.524 )
+position = Vector2( 212.3, 149.516 )
 
 [node name="Enemy2" parent="Game" groups=[
 "enemy",

@@ -3,7 +3,10 @@ extends CanvasLayer
 var collectables = 0
 
 func _ready():
-	$Collectables.text = String(collectables)
+	if collectables < 10:
+		$Collectables.text = "0" + String(collectables)
+	else:
+		$Collectables.text = String(collectables)
 	$Message.hide()
 
 func _physics_process(delta):
@@ -14,5 +17,8 @@ func _physics_process(delta):
 
 func _on_collectable_collected():
 	collectables = collectables + 1
-	$Collectables.text = String(collectables)
+	if collectables < 10:
+		$Collectables.text = "0" + String(collectables)
+	else:
+		$Collectables.text = String(collectables)
 	
