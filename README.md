@@ -1,8 +1,10 @@
 # Interaktive-Systeme-Godot-Jump-n-Run
 
 ## Offen:
+- Animation für Projektile
 - Endgegner
 - Level Design
+- Mechaniken
 - Teleporter?
 - Optionen
 - Objekte die Effekte auslösen
