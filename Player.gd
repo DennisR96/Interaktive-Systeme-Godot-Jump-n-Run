@@ -4,13 +4,15 @@ extends KinematicBody2D
 
 export var GRAVITY = 8.1 
 export var SPEED = 50						# Geschwindigkei
-export var jump_force = -240			
+export var jump_force = -240	
+export var double_jump = false	
 var collectables = 0
 var playerHit = false
 
 signal player_hit
 
-const PROJECTILE = preload("res://Projectile.tscn")
+var can_fire = true
+var PROJECTILE = preload("res://Projectile.tscn")
 
 var velocity = Vector2(0,0)
 
@@ -26,18 +28,36 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = true
 		if sign($Position2D.position.x) == 1:
 			$Position2D.position.x *= -1
-#	else:
-#		velocity.x = 0
+	else:
+		velocity.x = 0
 		
 	# Jumping 
-	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_force
+	#if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("jump") and is_on_floor():
+	#	print(jump)
+	#	velocity.y = jump_force
+	#	jump = 1
 		
-	# Projectile
-	if Input.is_action_just_pressed("ui_focus_next"):
-		var projectile = PROJECTILE.instance()
-		get_parent().add_child(projectile)
-		projectile.position = $Position2D.global_position 
+	# Jumping
+	if is_on_floor():
+		double_jump = false
+
+	if Input.is_action_just_pressed("ui_up"):
+		if is_on_floor() :
+			velocity.y = jump_force
+		elif !double_jump:
+			velocity.y = jump_force
+			double_jump = true
+	if Input.is_action_just_pressed("ui_focus_next") and can_fire:
+		var projectile_instance = PROJECTILE.instance()
+		if not $AnimatedSprite.flip_h:
+			projectile_instance.direction = 1
+		elif $AnimatedSprite.flip_h:
+			projectile_instance.direction = -1
+		projectile_instance.global_position = $Position2D.global_position
+		get_parent().add_child(projectile_instance)
+		can_fire = false
+		yield(get_tree().create_timer(1),'timeout')
+		can_fire = true
 		
 	# Play Animation
 	if playerHit:

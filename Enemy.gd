@@ -26,6 +26,17 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
+func dead():
+	$AnimatedSprite.play("Hit")
+	speed = 0
+	set_collision_layer_bit(4, false)
+	set_collision_mask_bit(0, false)
+	$top_checker.set_collision_layer_bit(4, false)
+	$top_checker.set_collision_mask_bit(0, false)
+	$sides_checker.set_collision_layer_bit(4, false)
+	$sides_checker.set_collision_mask_bit(0, false)
+	$Timer.start()		# Timer, dannach wird Enemy gelöscht
+
 # Wenn Player auf Enemy draufspringt
 func _on_top_checker_body_entered(body):
 	$AnimatedSprite.play("Hit")
