@@ -10,12 +10,18 @@
 - Objekte die Effekte auslösen
 - Variationen Gegner
 
+## Angefangen / Zu überarbeiten
+- Wall Jump
 
 ## Abgeschlossen:
 - Startscreen
 - Game erstellen
 - Asset-Set auswählen
 - Storyline ausdenken (Froschkönig)
+- Items einsammeln
+- Gegner
+- Gegner können Schaden ausrichten
+- Munition schießen (Player)
 
 ## Anleitung
 Problem Sprite blurry -> Lösung: Sprite auswählen, "Import" (oben links) auswählen, auf Vorlage "2D Pixel" wechseln, "Neuimport" anklicken
