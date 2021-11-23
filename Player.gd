@@ -28,21 +28,15 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = true
 		if sign($Position2D.position.x) == 1:
 			$Position2D.position.x *= -1
-	else:
+	elif not playerHit: # not playerHit wichtig, damit ein kurzer seitlicher Sprung des Players stattfinden kann, wenn er von einem Enemy getroffen wird
 		velocity.x = 0
-		
-	# Jumping 
-	#if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("jump") and is_on_floor():
-	#	print(jump)
-	#	velocity.y = jump_force
-	#	jump = 1
-		
+	
 	# Jumping
 	if is_on_floor():
 		double_jump = false
-
+		
 	if Input.is_action_just_pressed("ui_up"):
-		if is_on_floor() :
+		if is_on_floor():
 			velocity.y = jump_force
 		elif !double_jump:
 			velocity.y = jump_force
@@ -62,16 +56,29 @@ func _physics_process(delta):
 	# Play Animation
 	if playerHit:
 		$AnimatedSprite.play("Hit")
-	elif velocity.y < 0 and not playerHit:
+	elif is_on_wall():
+		$AnimatedSprite.play("WallJump")
+	elif double_jump:
+		$AnimatedSprite.play("DoubleJump")
+	elif velocity.y < 0:
 		$AnimatedSprite.play("Jump")
-	elif velocity.y > 0 and not playerHit:
+	elif velocity.y > 0:
 		$AnimatedSprite.play("Fall")
-	elif velocity.x != 0 and velocity.y == 0 and not playerHit:
+	elif velocity.x != 0 and velocity.y == 0:
 		$AnimatedSprite.play("Walk")
 	else:
 		$AnimatedSprite.play("Idle")
+	
+	# Player an der Wand
+	if is_on_wall() and not is_on_floor():
+		velocity.y = 10
+		if $AnimatedSprite.flip_h:
+			velocity.x = -5
+		else:
+			velocity.x = 5
+	else:
+		velocity.y += GRAVITY
 		
-	velocity.y += GRAVITY
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.2)
 	
@@ -81,6 +88,7 @@ func bounce():
 	
 # Enemy-Skript greift auf diese Funktion zu
 func ouch(var enemyPosX):
+	playerHit = true
 	emit_signal("player_hit")
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
 	velocity.y = jump_force * 0.5 # Kleiner Sprung
@@ -93,7 +101,6 @@ func ouch(var enemyPosX):
 	Input.action_release("left")
 	Input.action_release("right")
 	
-	playerHit = true
 	$Timer.start()
 	
 func ouchFallzone():
@@ -102,7 +109,10 @@ func ouchFallzone():
 	velocity.y = jump_force * 0.7 # Kleiner Sprung
 	
 	position.x = 128
-	position.y = 192
+	position.y = 224
+
+#	position.x = position.x - 50
+#	position.y = position.y - 100
 	
 	playerHit = true
 	$Timer.start()
