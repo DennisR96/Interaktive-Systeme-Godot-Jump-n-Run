@@ -89,6 +89,8 @@ func bounce():
 	
 # Enemy-Skript greift auf diese Funktion zu
 func ouch(var enemyPosX):
+	Input.action_release("ui_left")
+	Input.action_release("ui_right")
 	playerHit = true
 	emit_signal("player_hit")
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
@@ -98,9 +100,6 @@ func ouch(var enemyPosX):
 		velocity.x = -400
 	elif position.x > enemyPosX:
 		velocity.x = 400
-	
-	Input.action_release("left")
-	Input.action_release("right")
 	
 	$Timer.start()
 	

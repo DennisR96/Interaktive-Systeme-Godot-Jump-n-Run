@@ -9,6 +9,8 @@ func _on_Start_pressed():
 
 func _on_Exit_pressed():
 	get_tree().quit()										# Quits Game
+	if OS.has_feature('JavaScript'):
+		JavaScript.eval("window.close()")
 	pass
 
 
