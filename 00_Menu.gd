@@ -10,3 +10,8 @@ func _on_Start_pressed():
 func _on_Exit_pressed():
 	get_tree().quit()										# Quits Game
 	pass
+
+
+func _on_Controls_pressed():
+	get_tree().change_scene("res://ControlsMenu.tscn")
+	pass # Replace with function body.

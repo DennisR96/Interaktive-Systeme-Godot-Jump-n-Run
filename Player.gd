@@ -56,8 +56,8 @@ func _physics_process(delta):
 	# Play Animation
 	if playerHit:
 		$AnimatedSprite.play("Hit")
-	elif is_on_wall():
-		$AnimatedSprite.play("WallJump")
+#	elif is_on_wall():
+#		$AnimatedSprite.play("WallJump")
 	elif double_jump:
 		$AnimatedSprite.play("DoubleJump")
 	elif velocity.y < 0:
@@ -70,15 +70,16 @@ func _physics_process(delta):
 		$AnimatedSprite.play("Idle")
 	
 	# Player an der Wand
-	if is_on_wall() and not is_on_floor():
-		velocity.y = 10
-		if $AnimatedSprite.flip_h:
-			velocity.x = -5
-		else:
-			velocity.x = 5
-	else:
-		velocity.y += GRAVITY
-		
+#	if is_on_wall() and not is_on_floor():
+#		velocity.y = 10
+#		if $AnimatedSprite.flip_h:
+#			velocity.x = -5
+#		else:
+#			velocity.x = 5
+#	else:
+#		velocity.y += GRAVITY
+	
+	velocity.y += GRAVITY
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.2)
 	
@@ -107,12 +108,15 @@ func ouchFallzone():
 	emit_signal("player_hit")
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
 	velocity.y = jump_force * 0.7 # Kleiner Sprung
-	
-	position.x = 128
-	position.y = 224
-
-#	position.x = position.x - 50
-#	position.y = position.y - 100
+	if position.x <= 200:
+		position.x = 128
+		position.y = 224
+	elif position.x > 200 and position.x <= 550:
+		position.x = 376
+		position.y = 240
+	elif position.x > 550:
+		position.x = 880
+		position.y = 240
 	
 	playerHit = true
 	$Timer.start()

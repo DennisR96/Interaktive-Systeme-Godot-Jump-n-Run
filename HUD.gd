@@ -1,15 +1,15 @@
 extends CanvasLayer
 
-var collectables = 0
+var collectables = 20
 var lifes = 5
 
 func _ready():
-	$Collectables.text = "0" + String(collectables)
+	$Collectables.text = String(collectables)
 	$Lifes.text = "0" + String(lifes)
 	$Message.hide()
 
 func _physics_process(delta):
-	if collectables == 20:
+	if collectables == 0:
 		$Message.text = "Gewonnen! Alle Items wurden eingesammelt!"
 		$Message.show()
 		yield(get_tree().create_timer(2.0), "timeout")
@@ -22,7 +22,7 @@ func _physics_process(delta):
 		get_tree().change_scene("res://01_LevelA.tscn")
 
 func _on_collectable_collected():
-	collectables = collectables + 1
+	collectables = collectables - 1
 	if collectables < 10:
 		$Collectables.text = "0" + String(collectables)
 	else:

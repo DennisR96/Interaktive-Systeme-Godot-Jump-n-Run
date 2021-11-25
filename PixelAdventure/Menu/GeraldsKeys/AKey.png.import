@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/KeySample.png-d0513550be2bf0f329ce62488ecaf9da.stex"
+path="res://.import/AKey.png-67fa78609fd2678f1a1cfa05a655efb0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PixelAdventure/Menu/GeraldsKeys/KeySample.png"
-dest_files=[ "res://.import/KeySample.png-d0513550be2bf0f329ce62488ecaf9da.stex" ]
+source_file="res://PixelAdventure/Menu/GeraldsKeys/AKey.png"
+dest_files=[ "res://.import/AKey.png-67fa78609fd2678f1a1cfa05a655efb0.stex" ]
 
 [params]
 
