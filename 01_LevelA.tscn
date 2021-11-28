@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=15]
 [ext_resource path="res://PixelAdventure/Menu/Icons/Herz_Icon.png" type="Texture" id=16]
 [ext_resource path="res://PixelAdventure/Terrain/Terrain (16x16).png" type="Texture" id=17]
+[ext_resource path="res://MovingPlatform.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Blue"
@@ -118,17 +119,17 @@
 6/shapes = [  ]
 6/z_index = 0
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 8
 font_data = ExtResource( 13 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 48, 0, 48, 5, 0, 5 )
 
-[sub_resource type="TileSet" id=7]
+[sub_resource type="TileSet" id=5]
 14/name = "Stab01"
 14/texture = ExtResource( 17 )
 14/tex_offset = Vector2( 0, 0 )
@@ -139,14 +140,14 @@ points = PoolVector2Array( 0, 0, 48, 0, 48, 5, 0, 5 )
 14/navigation_offset = Vector2( 0, 0 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-14/shape = SubResource( 6 )
+14/shape = SubResource( 4 )
 14/shape_one_way = false
 14/shape_one_way_margin = 1.0
 14/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 14/z_index = 0
@@ -179,30 +180,64 @@ points = PoolVector2Array( 0, 0, 48, 0, 48, 5, 0, 5 )
 16/shapes = [  ]
 16/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 2 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 528, 9.17999 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="Animation" id=8]
+resource_name = "LR"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 149, 250 ), Vector2( 149, 125 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "LR"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 397, 238.175 ), Vector2( 492, 238.175 ), Vector2( 397, 238.175 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 0.219608 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=10]
 size = 8
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=13]
-font_data = ExtResource( 13 )
-
-[sub_resource type="DynamicFont" id=14]
 font_data = ExtResource( 13 )
 
 [node name="Node2D" type="Node2D"]
@@ -229,7 +264,7 @@ margin_left = 88.0
 margin_top = 160.0
 margin_right = 208.0
 margin_bottom = 216.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -256,7 +291,7 @@ __meta__ = {
 
 [node name="TilesOneWay" type="TileMap" parent="Game"]
 position = Vector2( -1, 0 )
-tile_set = SubResource( 7 )
+tile_set = SubResource( 5 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 49
@@ -272,57 +307,57 @@ collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 249, 178 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 265, 146 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 55, 114 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 343, 194 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 553, 98 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 569, 162 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 423, -14 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 1081, 130 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 1081, 50 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 1081, -30 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 871, -14 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="TilesSolid" type="TileMap" parent="Game"]
@@ -444,7 +479,23 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Area2D"]
 position = Vector2( 504, 82 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
+
+[node name="Platform" type="Node2D" parent="Game"]
+
+[node name="MovingPlatform" parent="Game/Platform" instance=ExtResource( 18 )]
+position = Vector2( 149, 129.171 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform"]
+playback_process_mode = 0
+anims/LR = SubResource( 8 )
+
+[node name="MovingPlatform2" parent="Game/Platform" instance=ExtResource( 18 )]
+position = Vector2( 397, 238.175 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform2"]
+playback_process_mode = 0
+anims/LR = SubResource( 14 )
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
 script = ExtResource( 14 )
@@ -454,7 +505,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 186.0
 margin_bottom = 49.0
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -476,7 +527,7 @@ margin_left = 42.1237
 margin_top = 24.0
 margin_right = 50.1237
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -487,7 +538,7 @@ margin_left = 56.0
 margin_top = 16.0
 margin_right = 88.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -511,7 +562,7 @@ margin_left = 128.0
 margin_top = 24.0
 margin_right = 136.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -522,7 +573,7 @@ margin_left = 144.0
 margin_top = 16.0
 margin_right = 176.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -539,7 +590,7 @@ margin_left = -112.0
 margin_top = -64.0
 margin_right = 112.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Super! Du hast alle Gegenstände eingesammelt!"
 align = 1
