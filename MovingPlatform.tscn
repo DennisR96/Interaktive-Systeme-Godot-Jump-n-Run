@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MovingPlatform.gd" type="Script" id=1]
-[ext_resource path="res://Characters/character_0013.png" type="Texture" id=2]
+[ext_resource path="res://PixelAdventure/Terrain/Stein_Klein.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.42198, 8.23079 )
+extents = Vector2( 7.41607, 7.38134 )
 
 [node name="MovingPlatform" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,5 +20,5 @@ scale = Vector2( 0.928404, 0.928404 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 10.3792, 10.5212 )
+position = Vector2( 10.4844, 10.6264 )
 shape = SubResource( 1 )

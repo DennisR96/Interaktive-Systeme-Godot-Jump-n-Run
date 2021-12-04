@@ -6,13 +6,19 @@ var player = null
 var dead = false
 
 func _ready():
-	$AnimatedSprite.play("default")
+	$AnimatedSprite.play("flying")
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if player:
 		velocity = position.direction_to(player.position) * run_speed
 	velocity = move_and_slide(velocity)
+	# Animation der Richtung anpassen
+	if velocity.x < 0:
+		$AnimatedSprite.flip_h = false
+	else:
+		$AnimatedSprite.flip_h = true
+		
 	pass
 
 func _on_Area2D_body_entered(body):
@@ -31,6 +37,15 @@ func _on_top_checker_body_entered(body):
 		velocity = move_and_slide(Vector2.ZERO)
 		$AnimatedSprite.play("hit")
 		body.bounce()
+		
+		# Player kann nicht noch mal den Body des Enemys betreten
+		set_collision_layer_bit(4, false)
+		set_collision_mask_bit(0, false)
+		$top_checker.set_collision_layer_bit(4, false)
+		$top_checker.set_collision_mask_bit(0, false)
+		$sides_checker.set_collision_layer_bit(4, false)
+		$sides_checker.set_collision_mask_bit(0, false)
+		
 		yield(get_tree().create_timer(1),'timeout')
 		queue_free()
 		

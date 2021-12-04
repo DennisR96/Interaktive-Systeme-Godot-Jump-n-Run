@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Hit (46x30).png-f59cd34cd86355d9d964ca1184175ae5.stex"
+path="res://.import/GoldeneKugel.png-1b881e94a52d37cb5edadbccb0af48aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PixelAdventure/Enemies/Bat/Hit (46x30).png"
-dest_files=[ "res://.import/Hit (46x30).png-f59cd34cd86355d9d964ca1184175ae5.stex" ]
+source_file="res://PixelAdventure/Items/Froschkoenig_selbst_erstellt/GoldeneKugel.png"
+dest_files=[ "res://.import/GoldeneKugel.png-1b881e94a52d37cb5edadbccb0af48aa.stex" ]
 
 [params]
 
