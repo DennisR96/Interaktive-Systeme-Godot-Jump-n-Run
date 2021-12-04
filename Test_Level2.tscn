@@ -1,28 +1,28 @@
 [gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles_oneway.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://PixelAdventure/Background/Purple.png" type="Texture" id=3]
-[ext_resource path="res://PixelAdventure/Background/Blue.png" type="Texture" id=4]
-[ext_resource path="res://PixelAdventure/Background/Yellow.png" type="Texture" id=5]
-[ext_resource path="res://Game.gd" type="Script" id=6]
-[ext_resource path="res://PixelAdventure/Background/Brown.png" type="Texture" id=7]
-[ext_resource path="res://PixelAdventure/Background/Pink.png" type="Texture" id=8]
-[ext_resource path="res://PixelAdventure/Background/Gray.png" type="Texture" id=9]
-[ext_resource path="res://PixelAdventure/Background/Green.png" type="Texture" id=10]
-[ext_resource path="res://Collectable.tscn" type="PackedScene" id=11]
-[ext_resource path="res://PixelAdventure/Items/Fruits/Apfel_Icon.png" type="Texture" id=12]
-[ext_resource path="res://PixelAdventure/Menu/Text/PressStart2P-Regular.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://HUD.gd" type="Script" id=14]
-[ext_resource path="res://world_tileset.tres" type="TileSet" id=15]
-[ext_resource path="res://PixelAdventure/Menu/Icons/Herz_Icon.png" type="Texture" id=16]
-[ext_resource path="res://tiles_oneway.tres" type="TileSet" id=17]
-[ext_resource path="res://MovingPlatform.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scripts/Enemy_AI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scripts/Enemy_AI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MovingPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Collectable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://PixelAdventure/Menu/Text/PressStart2P-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Game.gd" type="Script" id=8]
+[ext_resource path="res://HUD.gd" type="Script" id=9]
+[ext_resource path="res://PixelAdventure/Background/Gray.png" type="Texture" id=10]
+[ext_resource path="res://PixelAdventure/Background/Yellow.png" type="Texture" id=11]
+[ext_resource path="res://PixelAdventure/Background/Pink.png" type="Texture" id=12]
+[ext_resource path="res://PixelAdventure/Background/Brown.png" type="Texture" id=13]
+[ext_resource path="res://PixelAdventure/Background/Blue.png" type="Texture" id=14]
+[ext_resource path="res://PixelAdventure/Background/Purple.png" type="Texture" id=15]
+[ext_resource path="res://PixelAdventure/Background/Green.png" type="Texture" id=16]
+[ext_resource path="res://PixelAdventure/Items/Fruits/Apfel_Icon.png" type="Texture" id=17]
+[ext_resource path="res://world_tileset.tres" type="TileSet" id=18]
+[ext_resource path="res://PixelAdventure/Menu/Icons/Herz_Icon.png" type="Texture" id=19]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Blue"
-0/texture = ExtResource( 4 )
+0/texture = ExtResource( 14 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -36,7 +36,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Brown"
-1/texture = ExtResource( 7 )
+1/texture = ExtResource( 13 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 64, 64 )
@@ -50,7 +50,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "Gray"
-2/texture = ExtResource( 9 )
+2/texture = ExtResource( 10 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 64, 64 )
@@ -64,7 +64,7 @@
 2/shapes = [  ]
 2/z_index = 0
 3/name = "Green"
-3/texture = ExtResource( 10 )
+3/texture = ExtResource( 16 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 64, 64 )
@@ -78,7 +78,7 @@
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Pink"
-4/texture = ExtResource( 8 )
+4/texture = ExtResource( 12 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 64, 64 )
@@ -92,7 +92,7 @@
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Purple"
-5/texture = ExtResource( 3 )
+5/texture = ExtResource( 15 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 64, 64 )
@@ -106,7 +106,7 @@
 5/shapes = [  ]
 5/z_index = 0
 6/name = "Yellow"
-6/texture = ExtResource( 5 )
+6/texture = ExtResource( 11 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 64, 64 )
@@ -125,7 +125,7 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 8
-font_data = ExtResource( 13 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 2 )
@@ -144,7 +144,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 149, 250 ), Vector2( 149, 125 ) ]
+"values": [ Vector2( 149, 250 ), Vector2( 149, 140.555 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -176,23 +176,23 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="DynamicFont" id=11]
 size = 8
-font_data = ExtResource( 13 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=12]
-font_data = ExtResource( 13 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=13]
-font_data = ExtResource( 13 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=14]
-font_data = ExtResource( 13 )
+font_data = ExtResource( 7 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 190.438, 128.79 )
 scale = Vector2( -1432.13, 24.0619 )
 
 [node name="Game" type="Node" parent="."]
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 
 [node name="Background" type="TileMap" parent="Game"]
 tile_set = SubResource( 1 )
@@ -227,8 +227,7 @@ margin_right = 64.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
-text = "Ziel: Sammel alle 20
-Äpfel ein"
+text = "ACHTUNG: Skripte hier sind die gleichen, wie in Level 1!"
 align = 1
 valign = 1
 autowrap = true
@@ -238,7 +237,7 @@ __meta__ = {
 
 [node name="TilesOneWay" type="TileMap" parent="Game"]
 position = Vector2( -1, 0 )
-tile_set = ExtResource( 17 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 49
@@ -309,7 +308,7 @@ one_way_collision = true
 
 [node name="TilesSolid" type="TileMap" parent="Game"]
 position = Vector2( -1, 0 )
-tile_set = ExtResource( 15 )
+tile_set = ExtResource( 18 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 49
@@ -321,110 +320,110 @@ __meta__ = {
 
 [node name="Collectables" type="Node2D" parent="Game"]
 
-[node name="Collectable1" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable1" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 240, 208 )
 
-[node name="Collectable2" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable2" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 240, 168 )
 
-[node name="Collectable3" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable3" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 312, -72 )
 
-[node name="Collectable4" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable4" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 272, -72 )
 
-[node name="Collectable5" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable5" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 56, 96 )
 
-[node name="Collectable6" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable6" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 352, -72 )
 
-[node name="Collectable7" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable7" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 296, -104 )
 
-[node name="Collectable8" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable8" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 336, -104 )
 
-[node name="Collectable9" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable9" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 624, -192 )
 
-[node name="Collectable10" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable10" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 624, -144 )
 
-[node name="Collectable11" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable11" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 624, -96 )
 
-[node name="Collectable12" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable12" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 552, 80 )
 
-[node name="Collectable13" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable13" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 352, 240 )
 
-[node name="Collectable14" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable14" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 440, 80 )
 
-[node name="Collectable15" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable15" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 560, 144 )
 
-[node name="Collectable16" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable16" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 1080, 32 )
 
-[node name="Collectable17" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable17" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 864, 240 )
 
-[node name="Collectable18" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable18" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 960, 32 )
 
-[node name="Collectable19" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable19" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 1080, 112 )
 
-[node name="Collectable20" parent="Game/Collectables" instance=ExtResource( 11 )]
+[node name="Collectable20" parent="Game/Collectables" instance=ExtResource( 5 )]
 position = Vector2( 1080, -48 )
 
 [node name="Enemies" type="Node2D" parent="Game"]
 
-[node name="Enemy" parent="Game/Enemies" instance=ExtResource( 1 )]
+[node name="Enemy" parent="Game/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 296, 128 )
 
-[node name="Enemy2" parent="Game/Enemies" instance=ExtResource( 1 )]
+[node name="Enemy2" parent="Game/Enemies" instance=ExtResource( 6 )]
 position = Vector2( -32, 32 )
 
-[node name="Enemy3" parent="Game/Enemies" instance=ExtResource( 1 )]
+[node name="Enemy3" parent="Game/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 112, -16 )
 
-[node name="Enemy4" parent="Game/Enemies" instance=ExtResource( 1 )]
+[node name="Enemy4" parent="Game/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 736, -80 )
 
-[node name="Enemy5" parent="Game/Enemies" instance=ExtResource( 1 )]
+[node name="Enemy5" parent="Game/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 768, 224 )
 
-[node name="Enemy6" parent="Game/Enemies" instance=ExtResource( 1 )]
+[node name="Enemy6" parent="Game/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 792, 112 )
 
-[node name="Enemy7" parent="Game/Enemies" instance=ExtResource( 1 )]
+[node name="Enemy7" parent="Game/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 1144, -64 )
 
 [node name="Platform" type="Node2D" parent="Game"]
 
-[node name="MovingPlatform" parent="Game/Platform" instance=ExtResource( 18 )]
-position = Vector2( 149, 237.5 )
+[node name="MovingPlatform" parent="Game/Platform" instance=ExtResource( 4 )]
+position = Vector2( 149, 250 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform"]
 playback_process_mode = 0
 anims/LR = SubResource( 8 )
 
-[node name="MovingPlatform2" parent="Game/Platform" instance=ExtResource( 18 )]
+[node name="MovingPlatform2" parent="Game/Platform" instance=ExtResource( 4 )]
 position = Vector2( 406.5, 238.175 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform2"]
 playback_process_mode = 0
 anims/LR = SubResource( 9 )
 
-[node name="Enemy_AI" parent="Game" instance=ExtResource( 19 )]
+[node name="Enemy_AI" parent="Game" instance=ExtResource( 3 )]
 position = Vector2( 332.629, -27.7704 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 256, -32 )
+position = Vector2( 112, -56 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 current = true
@@ -448,7 +447,7 @@ position = Vector2( 504, 82 )
 shape = SubResource( 7 )
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
-script = ExtResource( 14 )
+script = ExtResource( 9 )
 
 [node name="Panel" type="Panel" parent="Game/HUD"]
 margin_left = 8.0
@@ -465,7 +464,7 @@ margin_left = 16.0
 margin_top = 16.0
 margin_right = 36.0
 margin_bottom = 42.0
-texture = ExtResource( 12 )
+texture = ExtResource( 17 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -500,7 +499,7 @@ margin_left = 95.4381
 margin_top = 10.9432
 margin_right = 127.438
 margin_bottom = 42.9432
-texture = ExtResource( 16 )
+texture = ExtResource( 19 )
 expand = true
 stretch_mode = 5
 __meta__ = {

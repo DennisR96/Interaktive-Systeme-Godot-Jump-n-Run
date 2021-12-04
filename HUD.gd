@@ -1,32 +1,33 @@
 extends CanvasLayer
 
-var collectables = 20
+var collectablesInScene = 20
+var currentCollectables = 0
 var lifes = 5
 
 func _ready():
-	$Collectables.text = String(collectables)
+	$Collectables.text = "00/" + String(collectablesInScene)
 	$Lifes.text = "0" + String(lifes)
 	$Message.hide()
 
 func _physics_process(delta):
-	if collectables == 0:
+	if currentCollectables == collectablesInScene:
 		$Message.text = "Gewonnen! Alle Items wurden eingesammelt!"
 		$Message.show()
 		yield(get_tree().create_timer(2.0), "timeout")
-		get_tree().change_scene("res://01_LevelA.tscn")
+		get_tree().change_scene("res://01_Level1.tscn")
 		
 	if lifes == 0:
 		$Message.text = "Game Over! Versuche es erneut"
 		$Message.show()
 		yield(get_tree().create_timer(2.0), "timeout")
-		get_tree().change_scene("res://01_LevelA.tscn")
+		get_tree().change_scene("res://01_Level1.tscn")
 
 func _on_collectable_collected():
-	collectables = collectables - 1
-	if collectables < 10:
-		$Collectables.text = "0" + String(collectables)
+	currentCollectables = currentCollectables + 1
+	if currentCollectables < 10:
+		$Collectables.text = "0" + String(currentCollectables) + "/" + String(collectablesInScene)
 	else:
-		$Collectables.text = String(collectables)
+		$Collectables.text = String(currentCollectables) + "/" + String(collectablesInScene)
 	
 func _on_Player_player_hit():
 	lifes = lifes - 1

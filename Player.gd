@@ -3,7 +3,7 @@ class_name Player
 extends KinematicBody2D
 
 export var GRAVITY = 8.1 
-export var SPEED = 50						# Geschwindigkei
+export var SPEED = 70						# Geschwindigkei
 export var jump_force = -240	
 export var double_jump = false	
 export var wallJump = 300
@@ -133,15 +133,9 @@ func ouchFallzone():
 	emit_signal("player_hit")
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
 	velocity.y = jump_force * 0.7 # Kleiner Sprung
-	if position.x <= 200:
-		position.x = 128
-		position.y = 224
-	elif position.x > 200 and position.x <= 550:
-		position.x = 376
-		position.y = 240
-	elif position.x > 550:
-		position.x = 880
-		position.y = 240
+
+	position.x = 116
+	position.y = 256
 	
 	playerHit = true
 	$Timer.start()

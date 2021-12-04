@@ -122,7 +122,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 25 )
 animation = "Ball"
-frame = 7
+frame = 16
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_Collectable_body_entered"]
