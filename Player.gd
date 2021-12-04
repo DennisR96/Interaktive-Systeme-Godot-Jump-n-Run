@@ -6,8 +6,11 @@ export var GRAVITY = 8.1
 export var SPEED = 50						# Geschwindigkei
 export var jump_force = -240	
 export var double_jump = false	
+export var wallJump = 300
 var collectables = 0
 var playerHit = false
+
+
 
 signal player_hit
 
@@ -32,15 +35,25 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	# Jumping
-	if is_on_floor():
+	if is_on_floor() or nextToWall():
 		double_jump = false
 		
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_force
-		elif !double_jump:
+		elif not is_on_floor() and nextToLeftWall():
+			velocity.x += wallJump
+			velocity.y = jump_force
+		elif not is_on_floor() and nextToRightWall():
+			velocity.x -= wallJump
+			velocity.y = jump_force
+		elif not is_on_floor() and not nextToWall() and !double_jump:
 			velocity.y = jump_force
 			double_jump = true
+	# Langsames fallen, wenn an Wand
+	if nextToWall() and velocity.y > 30:
+		velocity.y = 30
+		
 	if Input.is_action_just_pressed("ui_focus_next") and can_fire:
 		var projectile_instance = PROJECTILE.instance()
 		if not $AnimatedSprite.flip_h:
@@ -56,33 +69,36 @@ func _physics_process(delta):
 	# Play Animation
 	if playerHit:
 		$AnimatedSprite.play("Hit")
-#	elif is_on_wall():
-#		$AnimatedSprite.play("WallJump")
+	elif nextToWall() and not is_on_floor():
+		$AnimatedSprite.play("WallJump")
 	elif double_jump:
 		$AnimatedSprite.play("DoubleJump")
-	elif velocity.y < 0:
+	elif velocity.y < 0 and not is_on_floor():
 		$AnimatedSprite.play("Jump")
-	elif velocity.y > 0:
+	elif velocity.y > 0 and not is_on_floor():
 		$AnimatedSprite.play("Fall")
 	elif velocity.x != 0 and velocity.y == 0:
 		$AnimatedSprite.play("Walk")
 	else:
 		$AnimatedSprite.play("Idle")
 	
-	# Player an der Wand
-#	if is_on_wall() and not is_on_floor():
-#		velocity.y = 10
-#		if $AnimatedSprite.flip_h:
-#			velocity.x = -5
-#		else:
-#			velocity.x = 5
-#	else:
-#		velocity.y += GRAVITY
 	
 	velocity.y += GRAVITY
-	velocity = move_and_slide(velocity, Vector2.UP)
+	if is_on_floor():
+		velocity = move_and_slide_with_snap(velocity, Vector2(0, 1), Vector2.UP)
+	else:
+		velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.2)
+
+func nextToWall():
+	return nextToRightWall() or nextToLeftWall()
 	
+func nextToRightWall():
+	return $RightWall.is_colliding()
+	
+func nextToLeftWall():
+	return $LeftWall.is_colliding()
+
 # Enemy-Skript greift auf diese Funktion zu
 func bounce():
 	velocity.y = jump_force * 0.7

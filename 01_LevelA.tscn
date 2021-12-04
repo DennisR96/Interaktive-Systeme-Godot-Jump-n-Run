@@ -184,9 +184,6 @@ points = PoolVector2Array( 0, 0, 48, 0, 48, 5, 0, 5 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 2 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 528, 9.17999 )
-
 [sub_resource type="Animation" id=8]
 resource_name = "LR"
 length = 4.0
@@ -220,6 +217,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 397, 238.175 ), Vector2( 492, 238.175 ), Vector2( 397, 238.175 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 528, 9.17999 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 0.219608 )
@@ -458,6 +458,25 @@ position = Vector2( 792, 112 )
 [node name="Enemy7" parent="Game/Enemies" instance=ExtResource( 1 )]
 position = Vector2( 1144, -64 )
 
+[node name="Platform" type="Node2D" parent="Game"]
+
+[node name="MovingPlatform" parent="Game/Platform" instance=ExtResource( 18 )]
+position = Vector2( 149, 237.5 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform"]
+playback_process_mode = 0
+anims/LR = SubResource( 8 )
+
+[node name="MovingPlatform2" parent="Game/Platform" instance=ExtResource( 18 )]
+position = Vector2( 406.5, 238.175 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform2"]
+playback_process_mode = 0
+anims/LR = SubResource( 9 )
+
+[node name="Enemy_AI" parent="Game" instance=ExtResource( 19 )]
+position = Vector2( 332.629, -27.7704 )
+
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 88, 224 )
 
@@ -481,22 +500,6 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Area2D"]
 position = Vector2( 504, 82 )
 shape = SubResource( 7 )
-
-[node name="Platform" type="Node2D" parent="Game"]
-
-[node name="MovingPlatform" parent="Game/Platform" instance=ExtResource( 18 )]
-position = Vector2( 149, 129.171 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform"]
-playback_process_mode = 0
-anims/LR = SubResource( 8 )
-
-[node name="MovingPlatform2" parent="Game/Platform" instance=ExtResource( 18 )]
-position = Vector2( 397, 238.175 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform2"]
-playback_process_mode = 0
-anims/LR = SubResource( 9 )
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
 script = ExtResource( 14 )
@@ -600,9 +603,6 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Enemy_AI" parent="Game" instance=ExtResource( 19 )]
-position = Vector2( 332.629, -27.7704 )
 
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable2" to="Game/HUD" method="_on_collectable_collected"]
