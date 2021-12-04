@@ -11,7 +11,8 @@
 - Variationen Gegner
 
 ## Angefangen / Zu überarbeiten
-- Wall Jump
+- Level 1
+- Gegner, die dem Spieler folgen
 
 ## Abgeschlossen:
 - Startscreen
@@ -22,6 +23,7 @@
 - Gegner
 - Gegner können Schaden ausrichten
 - Munition schießen (Player)
+- Wall Jump
 
 ## Anleitung
 Problem Sprite blurry -> Lösung: Sprite auswählen, "Import" (oben links) auswählen, auf Vorlage "2D Pixel" wechseln, "Neuimport" anklicken
