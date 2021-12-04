@@ -42,9 +42,11 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_force
 		elif not is_on_floor() and nextToLeftWall():
+			$AnimatedSprite.flip_h = true
 			velocity.x += wallJump
 			velocity.y = jump_force
 		elif not is_on_floor() and nextToRightWall():
+			$AnimatedSprite.flip_h = false
 			velocity.x -= wallJump
 			velocity.y = jump_force
 		elif not is_on_floor() and not nextToWall() and !double_jump:
@@ -91,8 +93,16 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x, 0, 0.2)
 
 func nextToWall():
+	# Kein Wall Jump bei den One Way Plattformen
+	if nextToLeftWall():
+		if $LeftWall.get_collider().get_parent().get_name() == "TilesOneWay":
+			return false
+	if nextToRightWall():
+		if $RightWall.get_collider().get_parent().get_name() == "TilesOneWay":
+			return false
+	# Wenn normale Plattform
 	return nextToRightWall() or nextToLeftWall()
-	
+
 func nextToRightWall():
 	return $RightWall.is_colliding()
 	
