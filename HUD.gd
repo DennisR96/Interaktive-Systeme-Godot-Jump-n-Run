@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var collectablesInScene = 20
+var collectablesInScene = 10
 var currentCollectables = 0
 var lifes = 5
 
