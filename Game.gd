@@ -1,5 +1,7 @@
 extends Node
 
+
+
 func _ready():
 	$Platform/MovingPlatform/AnimationPlayer2.play("LR")
 	$Platform/MovingPlatform2/AnimationPlayer2.play("LR")

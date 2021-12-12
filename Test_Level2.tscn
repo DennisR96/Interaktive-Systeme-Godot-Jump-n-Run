@@ -127,10 +127,10 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 size = 8
 font_data = ExtResource( 7 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 2 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "LR"
 length = 4.0
 loop = true
@@ -147,7 +147,7 @@ tracks/0/keys = {
 "values": [ Vector2( 149, 250 ), Vector2( 149, 140.555 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 resource_name = "LR"
 length = 4.0
 loop = true
@@ -167,24 +167,24 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 528, 9.17999 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 0.219608 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=9]
 size = 8
 font_data = ExtResource( 7 )
 
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 7 )
+
 [sub_resource type="DynamicFont" id=12]
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=13]
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=14]
 font_data = ExtResource( 7 )
 
 [node name="Node2D" type="Node2D"]
@@ -253,57 +253,57 @@ collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 249, 178 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 265, 146 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 55, 114 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 343, 194 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 553, 98 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 569, 162 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 423, -14 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 1081, 130 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 1081, 50 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 1081, -30 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( 871, -14 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="TilesSolid" type="TileMap" parent="Game"]
@@ -410,14 +410,14 @@ position = Vector2( 149, 250 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform"]
 playback_process_mode = 0
-anims/LR = SubResource( 8 )
+anims/LR = SubResource( 5 )
 
 [node name="MovingPlatform2" parent="Game/Platform" instance=ExtResource( 4 )]
 position = Vector2( 406.5, 238.175 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform2"]
 playback_process_mode = 0
-anims/LR = SubResource( 9 )
+anims/LR = SubResource( 6 )
 
 [node name="Enemy_AI" parent="Game" instance=ExtResource( 3 )]
 position = Vector2( 332.629, -27.7704 )
@@ -454,7 +454,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 186.0
 margin_bottom = 49.0
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -476,7 +476,7 @@ margin_left = 42.1237
 margin_top = 24.0
 margin_right = 50.1237
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -487,7 +487,7 @@ margin_left = 56.0
 margin_top = 16.0
 margin_right = 88.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 10 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -511,7 +511,7 @@ margin_left = 128.0
 margin_top = 24.0
 margin_right = 136.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -522,7 +522,7 @@ margin_left = 144.0
 margin_top = 16.0
 margin_right = 176.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 11 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -539,7 +539,7 @@ margin_left = -112.0
 margin_top = -64.0
 margin_right = 112.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Super! Du hast alle Gegenstände eingesammelt!"
 align = 1

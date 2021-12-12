@@ -139,6 +139,12 @@ func ouchFallzone():
 	
 	playerHit = true
 	$Timer.start()
+	
+func ouchProjectile():
+	emit_signal("player_hit")
+	playerHit = true
+	velocity.y = jump_force * 0.7 
+	$Timer.start()
 
 func _on_Timer_timeout():
 	playerHit = false

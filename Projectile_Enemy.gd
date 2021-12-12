@@ -20,17 +20,13 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Area2D_body_entered(body):
-	#print(body.name)
 	if body.name == "Player":
-		return 0
+		body.ouchProjectile()
+		print("Hit..")
+		queue_free()
 	else:
-		$AnimatedSprite.play("Hit")
-	if "Enemy" in body.name:
-		body.dead()
-	set_collision_mask_bit(0, false)
-	set_collision_layer_bit(0, false)
-	yield($AnimatedSprite, "animation_finished")
-	queue_free()
+		return 0
+	
 	
 func _on_Enemy_body_entered(body):
 	print("Enemy")
