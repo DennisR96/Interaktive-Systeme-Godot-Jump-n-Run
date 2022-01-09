@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://FallingPlattform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Scripts/Enemy_AI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Enemy_Stone.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Enemy_Projectile.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Sounds/magical_theme.wav" type="AudioStream" id=22]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Blue"
@@ -480,6 +481,11 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="Game"]
+stream = ExtResource( 22 )
+pitch_scale = 0.92
+autoplay = true
 
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable2" to="Game/HUD" method="_on_collectable_collected"]

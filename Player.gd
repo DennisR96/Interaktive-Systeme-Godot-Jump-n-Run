@@ -41,15 +41,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_force
+			$PlayerJump.play()
 		elif not is_on_floor() and nextToLeftWall():
 			$AnimatedSprite.flip_h = true
 			velocity.x += wallJump
 			velocity.y = jump_force
+			$PlayerJump.play()
 		elif not is_on_floor() and nextToRightWall():
 			$AnimatedSprite.flip_h = false
 			velocity.x -= wallJump
 			velocity.y = jump_force
+			$PlayerJump.play()
 		elif not is_on_floor() and not nextToWall() and !double_jump:
+			$PlayerJump.play()
 			velocity.y = jump_force
 			double_jump = true
 	# Langsames fallen, wenn an Wand
@@ -65,6 +69,7 @@ func _physics_process(delta):
 		projectile_instance.global_position = $Position2D.global_position
 		get_parent().add_child(projectile_instance)
 		can_fire = false
+		$PlayerShoot.play()
 		yield(get_tree().create_timer(1),'timeout')
 		can_fire = true
 		
@@ -111,10 +116,12 @@ func nextToLeftWall():
 
 # Enemy-Skript greift auf diese Funktion zu
 func bounce():
+	$PlayerCrush.play()
 	velocity.y = jump_force * 0.7
 	
 # Enemy-Skript greift auf diese Funktion zu
 func ouch(var enemyPosX):
+	$PlayerDead.play()
 	Input.action_release("ui_left")
 	Input.action_release("ui_right")
 	playerHit = true
@@ -130,6 +137,7 @@ func ouch(var enemyPosX):
 	$Timer.start()
 	
 func ouchFallzone():
+	$PlayerDead.play()
 	emit_signal("player_hit")
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
 	velocity.y = jump_force * 0.7 # Kleiner Sprung
@@ -141,6 +149,7 @@ func ouchFallzone():
 	$Timer.start()
 	
 func ouchProjectile():
+	$PlayerDead.play()
 	emit_signal("player_hit")
 	playerHit = true
 	velocity.y = jump_force * 0.7 
