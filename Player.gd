@@ -10,8 +10,6 @@ export var wallJump = 300
 var collectables = 0
 var playerHit = false
 
-
-
 signal player_hit
 
 var can_fire = true
@@ -59,6 +57,17 @@ func _physics_process(delta):
 	# Langsames fallen, wenn an Wand
 	if nextToWall() and velocity.y > 30:
 		velocity.y = 30
+		
+	if Input.is_action_just_pressed("ui_down"):
+		for i in get_slide_count():
+			var collision = get_slide_collision(i)
+			if collision.collider.get_parent().name == "TilesOneWay":
+				for j in collision.collider.get_child_count():
+					collision.collider.get_child(j).disabled = true
+				yield(get_tree().create_timer(0.5),'timeout')
+				for k in collision.collider.get_child_count():
+					collision.collider.get_child(k).disabled = false
+				
 		
 	if Input.is_action_just_pressed("ui_focus_next") and can_fire:
 		var projectile_instance = PROJECTILE.instance()
@@ -124,6 +133,8 @@ func ouch(var enemyPosX):
 	$PlayerDead.play()
 	Input.action_release("ui_left")
 	Input.action_release("ui_right")
+	Input.action_release("ui_down")
+	Input.action_release("ui_up")
 	playerHit = true
 	emit_signal("player_hit")
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
@@ -142,6 +153,11 @@ func ouchFallzone():
 	#set_modulate(Color(1,0.3,0.3,0.3)) #Farbe ändern 
 	velocity.y = jump_force * 0.7 # Kleiner Sprung
 
+	Input.action_release("ui_left")
+	Input.action_release("ui_right")
+	Input.action_release("ui_down")
+	Input.action_release("ui_up")
+	
 	position.x = 116
 	position.y = 256
 	

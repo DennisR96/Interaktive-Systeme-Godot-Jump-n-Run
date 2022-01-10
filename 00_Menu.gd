@@ -17,3 +17,7 @@ func _on_Exit_pressed():
 func _on_Controls_pressed():
 	get_tree().change_scene("res://ControlsMenu.tscn")
 	pass # Replace with function body.
+
+func _on_Settings_pressed():
+	get_tree().change_scene("res://SettingsMenu.tscn")
+	pass # Replace with function body.

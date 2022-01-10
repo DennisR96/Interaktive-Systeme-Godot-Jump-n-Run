@@ -257,7 +257,6 @@ __meta__ = {
 }
 
 [node name="TextureRect4" type="TextureRect" parent="LaufenPanel"]
-modulate = Color( 1, 1, 1, 0.619608 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -322,7 +321,6 @@ __meta__ = {
 }
 
 [node name="TextureRect8" type="TextureRect" parent="LaufenPanel"]
-modulate = Color( 1, 1, 1, 0.619608 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

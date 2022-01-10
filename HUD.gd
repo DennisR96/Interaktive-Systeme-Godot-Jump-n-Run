@@ -8,6 +8,13 @@ func _ready():
 	$Collectables.text = "00/" + String(collectablesInScene)
 	$Lifes.text = "0" + String(lifes)
 	$Message.hide()
+	$Panel.show()
+	$TextureRect.show()
+	$x.show()
+	$Collectables.show()
+	$TextureRect2.show()
+	$x2.show()
+	$Lifes.show()
 
 func _physics_process(delta):
 	if currentCollectables == collectablesInScene:
