@@ -515,6 +515,7 @@ __meta__ = {
 [node name="LevelMusic" type="AudioStreamPlayer" parent="Game"]
 stream = ExtResource( 22 )
 pitch_scale = 0.92
+autoplay = true
 
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable2" to="Game/HUD" method="_on_collectable_collected"]
