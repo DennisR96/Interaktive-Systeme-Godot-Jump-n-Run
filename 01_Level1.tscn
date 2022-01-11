@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://FallingPlattform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -190,6 +190,9 @@ font_data = ExtResource( 13 )
 [sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 13 )
 
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 48.5096, 37.47 )
+
 [node name="Node2D" type="Node2D"]
 position = Vector2( 190.438, 128.79 )
 scale = Vector2( -1432.13, 24.0619 )
@@ -203,8 +206,8 @@ format = 1
 tile_data = PoolIntArray( -1441793, 2, 0, -1507328, 2, 0, -1507327, 2, 0, -1507326, 2, 0, -1507325, 2, 0, -1507324, 2, 0, -1507323, 2, 0, -1507322, 2, 0, -1507321, 2, 0, -1376257, 2, 0, -1441792, 2, 0, -1441791, 2, 0, -1441790, 2, 0, -1441789, 2, 0, -1441788, 2, 0, -1441787, 2, 0, -1441786, 2, 0, -1441785, 2, 0, -1310721, 2, 0, -1376256, 2, 0, -1376255, 2, 0, -1376254, 2, 0, -1376253, 2, 0, -1376252, 2, 0, -1376251, 2, 0, -1376250, 2, 0, -1376249, 2, 0, -1245185, 2, 0, -1310720, 2, 0, -1310719, 2, 0, -1310718, 2, 0, -1310717, 2, 0, -1310716, 2, 0, -1310715, 2, 0, -1310714, 2, 0, -1310713, 2, 0, -1179649, 2, 0, -1245184, 2, 0, -1245183, 2, 0, -1245182, 2, 0, -1245181, 2, 0, -1245180, 2, 0, -1245179, 2, 0, -1245178, 2, 0, -1245177, 2, 0, -1114113, 2, 0, -1179648, 2, 0, -1179647, 2, 0, -1179646, 2, 0, -1179645, 2, 0, -1179644, 2, 0, -1179643, 2, 0, -1179642, 2, 0, -1179641, 2, 0, -1048577, 2, 0, -1114112, 2, 0, -1114111, 2, 0, -1114110, 2, 0, -1114109, 2, 0, -1114108, 2, 0, -1114107, 2, 0, -1114106, 2, 0, -1114105, 2, 0, -983041, 2, 0, -1048576, 2, 0, -1048575, 2, 0, -1048574, 2, 0, -1048573, 2, 0, -1048572, 2, 0, -1048571, 2, 0, -1048570, 2, 0, -1048569, 2, 0, -917505, 2, 0, -983040, 2, 0, -983039, 2, 0, -983038, 2, 0, -983037, 2, 0, -983036, 2, 0, -983035, 2, 0, -983034, 2, 0, -983033, 2, 0, -851969, 2, 0, -917504, 2, 0, -917503, 2, 0, -917502, 2, 0, -917501, 2, 0, -917500, 2, 0, -917499, 2, 0, -917498, 2, 0, -917497, 2, 0, -786433, 2, 0, -851968, 2, 0, -851967, 2, 0, -851966, 2, 0, -851965, 2, 0, -851964, 2, 0, -851963, 2, 0, -851962, 2, 0, -851961, 2, 0, -720897, 2, 0, -786432, 2, 0, -786431, 2, 0, -786430, 2, 0, -786429, 2, 0, -786428, 2, 0, -786427, 2, 0, -786426, 2, 0, -786425, 2, 0, -655361, 2, 0, -720896, 2, 0, -720895, 2, 0, -720894, 2, 0, -720893, 2, 0, -720892, 2, 0, -720891, 2, 0, -720890, 2, 0, -720889, 2, 0, -589825, 2, 0, -655360, 2, 0, -655359, 2, 0, -655358, 2, 0, -655357, 2, 0, -655356, 2, 0, -655355, 2, 0, -655354, 2, 0, -655353, 2, 0, -524289, 2, 0, -589824, 2, 0, -589823, 2, 0, -589822, 2, 0, -589821, 2, 0, -589820, 2, 0, -589819, 2, 0, -589818, 2, 0, -589817, 2, 0, -458753, 2, 0, -524288, 2, 0, -524287, 2, 0, -524286, 2, 0, -524285, 2, 0, -524284, 2, 0, -524283, 2, 0, -524282, 2, 0, -524281, 2, 0, -393217, 2, 0, -458752, 2, 0, -458751, 2, 0, -458750, 2, 0, -458749, 2, 0, -458748, 2, 0, -458747, 2, 0, -458746, 2, 0, -458745, 2, 0, -327681, 2, 0, -393216, 2, 0, -393215, 2, 0, -393214, 2, 0, -393213, 2, 0, -393212, 2, 0, -393211, 2, 0, -393210, 2, 0, -393209, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -327673, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 2, 0, -262140, 2, 0, -262139, 2, 0, -262138, 2, 0, -262137, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -196601, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -131070, 2, 0, -131069, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0 )
 
 [node name="Instructions" type="Control" parent="Game"]
-anchor_left = 0.000995191
-anchor_right = 0.000995191
+anchor_left = 0.00554841
+anchor_right = 0.00554841
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -247,7 +250,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 49
 format = 1
-tile_data = PoolIntArray( -3932136, 16, 0, -3473384, 16, 0, -2949117, 16, 0, -1048572, 16, 0, -1048569, 16, 0, -262120, 16, 0, 655384, 16, 0 )
+tile_data = PoolIntArray( -5832692, 16, 0, -5832689, 16, 0, -3932136, 16, 0, -3473384, 16, 0, -2949117, 16, 0, -1048572, 16, 0, -1048569, 16, 0, -262120, 16, 0, 655384, 16, 0 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -289,6 +292,16 @@ one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( -967.381, -428.212 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
+position = Vector2( -1160.42, -1005.27 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
+position = Vector2( -1114.77, -1005.75 )
 shape = SubResource( 4 )
 one_way_collision = true
 
@@ -339,7 +352,7 @@ position = Vector2( 341, -468 )
 [node name="Enemies" type="Node2D" parent="Game"]
 
 [node name="Enemy" parent="Game/Enemies" instance=ExtResource( 21 )]
-position = Vector2( 752, -1256 )
+position = Vector2( 253.843, -1167.97 )
 
 [node name="Enemy_Stone" parent="Game/Enemies" instance=ExtResource( 20 )]
 position = Vector2( 208, -136 )
@@ -379,9 +392,10 @@ position = Vector2( 244, -520 )
 position = Vector2( -1208, -848 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 293, -741.699 )
+position = Vector2( 170.573, -1153 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
+position = Vector2( 0.458527, 1.37555 )
 current = true
 zoom = Vector2( 0.9, 0.9 )
 limit_left = 0
@@ -517,6 +531,12 @@ stream = ExtResource( 22 )
 pitch_scale = 0.92
 autoplay = true
 
+[node name="NewLevel" type="Area2D" parent="Game"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/NewLevel"]
+position = Vector2( 239.237, -1469.77 )
+shape = SubResource( 13 )
+
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable2" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable3" to="Game/HUD" method="_on_collectable_collected"]
@@ -529,3 +549,4 @@ autoplay = true
 [connection signal="collectable_collected" from="Game/Collectables/Collectable10" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="player_hit" from="Game/Player" to="Game/HUD" method="_on_Player_player_hit"]
 [connection signal="body_entered" from="Game/Area2D" to="Game" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Game/NewLevel" to="Game" method="_on_NewLevel_body_entered"]

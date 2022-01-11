@@ -22,10 +22,18 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		body.ouchProjectile()
+		$AnimatedSprite.play("Hit")
 		print("Hit..")
-		queue_free()
-	else:
+	if "Enemy" in body.name:
 		return 0
+	else:
+		$AnimatedSprite.play("Hit")
+	set_collision_mask_bit(0, false)
+	set_collision_layer_bit(0, false)
+	yield($AnimatedSprite, "animation_finished")
+	$AnimatedSprite.play("Hit")
+	queue_free()
+	return 0
 	
 	
 func _on_Enemy_body_entered(body):
