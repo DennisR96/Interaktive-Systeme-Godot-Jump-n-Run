@@ -15,76 +15,76 @@
 [ext_resource path="res://Sounds/coin.wav" type="AudioStream" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 192, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
-region = Rect2( 224, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
-region = Rect2( 256, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
-region = Rect2( 288, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
-region = Rect2( 320, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 5 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 5 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 5 )
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 5 )
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 5 )
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 320, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
@@ -180,19 +180,9 @@ region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=42]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
 "name": "Hit",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
-"loop": true,
-"name": "Walk",
 "speed": 7.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -200,10 +190,15 @@ animations = [ {
 "name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
-"name": "Fall",
-"speed": 5.0
+"name": "Idle",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 7.0
 }, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
@@ -214,6 +209,11 @@ animations = [ {
 "loop": false,
 "name": "DoubleJump",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=43]
@@ -228,7 +228,7 @@ script = ExtResource( 2 )
 position = Vector2( 3.12819, -1.22392 )
 frames = SubResource( 42 )
 animation = "Idle"
-frame = 8
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -258,18 +258,27 @@ collision_mask = 2
 
 [node name="PlayerCoin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
+volume_db = -12.0
+bus = "SFX"
 
 [node name="PlayerDead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = -12.0
+bus = "SFX"
 
 [node name="PlayerShoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -12.0
+bus = "SFX"
 
 [node name="PlayerJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -12.0
+bus = "SFX"
 
 [node name="PlayerCrush" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+volume_db = -12.0
+bus = "SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

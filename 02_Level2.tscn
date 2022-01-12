@@ -517,6 +517,7 @@ __meta__ = {
 stream = ExtResource( 22 )
 pitch_scale = 0.92
 autoplay = true
+bus = "Music"
 
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/HUD" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable2" to="Game/HUD" method="_on_collectable_collected"]

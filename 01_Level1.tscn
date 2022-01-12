@@ -21,7 +21,7 @@
 [ext_resource path="res://Scripts/Enemy_AI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Enemy_Stone.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Enemy_Projectile.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Sounds/magical_theme.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sounds/Music/SLOWER-TEMPO2019-12-09_-_Retro_Forest_-_David_Fesliyan.mp3" type="AudioStream" id=22]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Blue"
@@ -392,10 +392,10 @@ position = Vector2( 244, -520 )
 position = Vector2( -1208, -848 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 170.573, -1153 )
+position = Vector2( 66.8947, 251.714 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
-position = Vector2( 0.458527, 1.37555 )
+position = Vector2( 7.07428, 29.2563 )
 current = true
 zoom = Vector2( 0.9, 0.9 )
 limit_left = 0
@@ -530,6 +530,7 @@ __meta__ = {
 stream = ExtResource( 22 )
 pitch_scale = 0.92
 autoplay = true
+bus = "Music"
 
 [node name="NewLevel" type="Area2D" parent="Game"]
 
