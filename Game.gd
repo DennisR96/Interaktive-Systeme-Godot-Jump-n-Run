@@ -5,6 +5,8 @@ extends Node
 func _ready():
 	$Platform/MovingPlatform/AnimationPlayer2.play("LR")
 	$Platform/MovingPlatform2/AnimationPlayer2.play("LR")
+	$Platform/MovingPlatform3/AnimationPlayer2.play("LR")
+	$Platform/MovingPlatform4/AnimationPlayer2.play("LR")
 
 func _on_Area2D_body_entered(body):
 	if (body.get_name() == "Player"):
