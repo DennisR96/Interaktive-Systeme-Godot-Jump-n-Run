@@ -14,7 +14,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://00_Menu.tscn")
 
-func _on_NewLevel_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene("res://02_Level2.tscn")
-	pass # Replace with function body.
+func _on_OuchWallSpikes_body_entered(body):
+	if (body.get_name() == "Player"):
+		body.ouchWallSpikes()

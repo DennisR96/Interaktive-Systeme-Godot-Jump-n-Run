@@ -18,10 +18,10 @@ func _ready():
 
 func _physics_process(delta):
 	if currentCollectables == collectablesInScene:
-		$Message.text = "Gewonnen! Alle Items wurden eingesammelt!"
+		$Message.text = "Super! Alle Kugeln in diesem Level wurden eingesammelt!"
 		$Message.show()
 		yield(get_tree().create_timer(2.0), "timeout")
-		get_tree().change_scene("res://01_Level1.tscn")
+		$Message.hide()
 		
 	if lifes == 0:
 		$Message.text = "Game Over! Versuche es erneut"
@@ -44,4 +44,12 @@ func _on_Player_player_hit():
 		$Lifes.text = "00"
 	else:
 		$Lifes.text = String(lifes)
-		
+
+func _on_NewLevel_body_entered(body):
+	if body.get_name() == "Player" and currentCollectables == collectablesInScene:
+		get_tree().change_scene("res://02_Level2.tscn")
+	elif body.get_name() == "Player" and currentCollectables < collectablesInScene:
+		$Message.text = "Du hast noch nicht alle Kugeln eingesammelt."
+		$Message.show()
+		yield(get_tree().create_timer(2.0), "timeout")
+		$Message.hide()

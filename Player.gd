@@ -147,6 +147,23 @@ func ouch(var enemyPosX):
 	
 	$Timer.start()
 	
+func ouchWallSpikes():
+	$PlayerDead.play()
+	Input.action_release("ui_left")
+	Input.action_release("ui_right")
+	Input.action_release("ui_down")
+	Input.action_release("ui_up")
+	playerHit = true
+	emit_signal("player_hit")
+	
+	velocity.y = jump_force * 0.5 # Kleiner Sprung
+	if $AnimatedSprite.flip_h == false:
+		velocity.x = -400
+	elif $AnimatedSprite.flip_h == true:
+		velocity.x = 400
+	
+	$Timer.start()
+	
 func ouchFallzone():
 	$PlayerDead.play()
 	emit_signal("player_hit")
