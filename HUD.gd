@@ -46,7 +46,7 @@ func _on_Player_player_hit():
 		$Lifes.text = String(lifes)
 
 func _on_NewLevel_body_entered(body):
-	if body.get_name() == "Player" and currentCollectables == collectablesInScene:
+	if body.get_name() == "Player" and currentCollectables >= collectablesInScene:
 		if (get_tree().get_current_scene().get_name() == "Level1"):
 			get_tree().change_scene("res://02_Level2.tscn")
 	elif body.get_name() == "Player" and currentCollectables < collectablesInScene:

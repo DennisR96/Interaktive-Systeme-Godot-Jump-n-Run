@@ -175,8 +175,12 @@ func ouchFallzone():
 	Input.action_release("ui_down")
 	Input.action_release("ui_up")
 	
-	position.x = 116
-	position.y = 256
+	if (get_tree().get_current_scene().get_name() == "Level1"):
+		position.x = 116
+		position.y = 256
+	elif (get_tree().get_current_scene().get_name() == "Level2"):
+		position.x = 432
+		position.y = 240
 	
 	playerHit = true
 	$Timer.start()
