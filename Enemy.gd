@@ -53,7 +53,8 @@ func _on_top_checker_body_entered(body):
 
 # Wenn Player seitlich in Enemy reinläuft
 func _on_sides_checker_body_entered(body):
-	body.ouch(position.x)
+	if body.get_name() == "Player":
+		body.ouch(position.x)
 
 # Enemy löschen nach timeout
 func _on_Timer_timeout():

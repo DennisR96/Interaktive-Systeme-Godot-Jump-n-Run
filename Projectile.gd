@@ -5,6 +5,7 @@ export var direction = 1
 
 func _ready():
 	set_as_toplevel(true)
+	$AnimatedSprite.play("Shoot")
 
 func _process(delta):
 	position += (Vector2.RIGHT*speed*direction).rotated(rotation) * delta
