@@ -16,17 +16,17 @@
 [ext_resource path="res://MovingPlatform.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Sounds/magical_theme.wav" type="AudioStream" id=22]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 8
 font_data = ExtResource( 13 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 62, 0, 62, 41, 0, 41 )
 
-[sub_resource type="TileSet" id=14]
+[sub_resource type="TileSet" id=4]
 0/name = "BrunnenPflanzen"
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
@@ -37,23 +37,22 @@ points = PoolVector2Array( 0, 0, 62, 0, 62, 41, 0, 41 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 13 )
+0/shape = SubResource( 3 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 25.53, 3.83688 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "LR"
+[sub_resource type="Animation" id=6]
 length = 6.0
 loop = true
 tracks/0/type = "value"
@@ -69,8 +68,7 @@ tracks/0/keys = {
 "values": [ Vector2( 480, 272 ), Vector2( 712, 272 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "LR"
+[sub_resource type="Animation" id=7]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -86,27 +84,27 @@ tracks/0/keys = {
 "values": [ Vector2( 93, -723 ), Vector2( 252, -723 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 244, 8 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 0.219608 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=9]
-size = 8
-font_data = ExtResource( 13 )
-
 [sub_resource type="DynamicFont" id=10]
+size = 8
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=13]
 font_data = ExtResource( 13 )
 
 [node name="Level2" type="Node2D"]
@@ -135,7 +133,7 @@ margin_left = 172.522
 margin_top = 136.0
 margin_right = 292.522
 margin_bottom = 192.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -149,7 +147,7 @@ margin_left = -177.0
 margin_top = -36.0
 margin_right = -49.0
 margin_bottom = 16.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
 text = "Ziel: Erreiche das Schloss und sammle dabei alle Kugeln ein "
 align = 1
@@ -160,7 +158,7 @@ __meta__ = {
 }
 
 [node name="Brunnen" type="TileMap" parent="Game"]
-tile_set = SubResource( 14 )
+tile_set = SubResource( 4 )
 cell_size = Vector2( 1, 1 )
 collision_layer = 2
 collision_mask = 49
@@ -186,12 +184,12 @@ collision_mask = 49
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( -375.425, 531.801 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Game/TilesOneWay/StaticBody2D"]
 position = Vector2( -327.484, 419.865 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="TilesSolid" type="TileMap" parent="Game"]
@@ -274,14 +272,14 @@ position = Vector2( 480, 272 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform"]
 playback_process_mode = 0
-anims/LR = SubResource( 5 )
+anims/LR = SubResource( 6 )
 
 [node name="MovingPlatform2" parent="Game/Platform" instance=ExtResource( 18 )]
 position = Vector2( 108.9, -723 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform2"]
 playback_process_mode = 0
-anims/LR = SubResource( 6 )
+anims/LR = SubResource( 7 )
 
 [node name="FallingPlattform1" parent="Game/Platform" instance=ExtResource( 1 )]
 position = Vector2( 520.435, 120 )
@@ -293,7 +291,7 @@ position = Vector2( 658.665, 88 )
 position = Vector2( 802.804, 149.691 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 976, 192 )
+position = Vector2( 52, 184 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 position = Vector2( 0.800995, 47.2675 )
@@ -315,7 +313,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Area2D"]
 position = Vector2( 496, 112 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
 script = ExtResource( 14 )
@@ -326,7 +324,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 232.0
 margin_bottom = 49.0
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -350,7 +348,7 @@ margin_left = 44.0
 margin_top = 24.0
 margin_right = 52.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -362,7 +360,7 @@ margin_left = 56.0
 margin_top = 16.0
 margin_right = 136.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "##/##"
 valign = 1
 __meta__ = {
@@ -388,7 +386,7 @@ margin_left = 180.0
 margin_top = 24.0
 margin_right = 188.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -400,7 +398,7 @@ margin_left = 192.0
 margin_top = 16.0
 margin_right = 224.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -417,7 +415,7 @@ margin_left = -112.0
 margin_top = -64.0
 margin_right = 112.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Super! Du hast alle Gegenstände eingesammelt!"
 align = 1
