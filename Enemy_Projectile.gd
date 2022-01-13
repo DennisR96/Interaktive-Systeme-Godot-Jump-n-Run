@@ -9,7 +9,7 @@ signal collectable_collected
 var PROJECTILE = preload("res://Projectile_Enemy.tscn") 
 
 func _ready():
-	$AnimatedSprite.play("Walk")
+	$AnimatedSprite.play("Idle")
 	if direction == -1:
 		$AnimatedSprite.flip_h = true
 	$floor_checker.position.x = $CollisionShape2D2.shape.get_extents().x * direction
@@ -20,6 +20,9 @@ func _process(delta):
 		shoot()
 
 func shoot():
+	$Timer2.start()
+	$AnimatedSprite.play("Shoot")
+	yield(get_tree().create_timer(2.0),"timeout") # Damit Animation mit Schießen übereinstimmt
 	var projectile_instance = PROJECTILE.instance()
 	projectile_instance.global_position = $Position2D.global_position
 	if direction == -1:
@@ -27,7 +30,8 @@ func shoot():
 	else:
 		projectile_instance.direction = -1
 	get_parent().add_child(projectile_instance)
-	$Timer2.start()
+	yield($AnimatedSprite, "animation_finished")
+	$AnimatedSprite.play("Idle")
 	
 func _physics_process(delta):
 	pass
