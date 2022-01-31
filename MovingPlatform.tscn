@@ -3,7 +3,6 @@
 [ext_resource path="res://MovingPlatform.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Tiles/Stein_mittel.png" type="Texture" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.8747, 7.38134 )
 
@@ -16,10 +15,10 @@ collision_layer = 2
 collision_mask = 49
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 10.4994, 10.6189 )
+position = Vector2( 10.6165, 10.4433 )
 scale = Vector2( 0.928404, 0.928404 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 10.4844, 10.6264 )
+position = Vector2( 10.6563, 10.4076 )
 shape = SubResource( 1 )

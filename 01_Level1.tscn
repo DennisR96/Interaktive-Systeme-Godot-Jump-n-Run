@@ -344,7 +344,7 @@ position = Vector2( 325, -1736 )
 [node name="Platform" type="Node2D" parent="Game"]
 
 [node name="MovingPlatform" parent="Game/Platform" instance=ExtResource( 18 )]
-position = Vector2( 238.667, 269 )
+position = Vector2( 308, 269 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Game/Platform/MovingPlatform"]
 playback_process_mode = 0

@@ -179,8 +179,16 @@ func ouchFallzone():
 		position.x = 116
 		position.y = 256
 	elif (get_tree().get_current_scene().get_name() == "Level2"):
-		position.x = 432
-		position.y = 240
+		if position.x < 1700:
+			position.x = 432
+			position.y = 240
+		if position.x >= 1700 and position.x < 2200:
+			position.x = 1860
+			position.y = 272
+		if position.x >= 2200:
+			position.x = 2392
+			position.y = 220
+			
 	
 	playerHit = true
 	$Timer.start()
