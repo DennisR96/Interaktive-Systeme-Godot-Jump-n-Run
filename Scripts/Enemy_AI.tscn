@@ -1,8 +1,9 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Enemy_AI.gd" type="Script" id=1]
-[ext_resource path="res://PixelAdventure/Enemies/Bat/Hit (46x30).png" type="Texture" id=2]
-[ext_resource path="res://PixelAdventure/Enemies/Bat/Flying (46x30).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Enemies/Bat/Hit (46x30).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Enemies/Bat/Flying (46x30).png" type="Texture" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 116.716, 114.031 )

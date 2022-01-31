@@ -4,8 +4,9 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game.gd" type="Script" id=6]
-[ext_resource path="res://PixelAdventure/Terrain/Terrain (16x16).png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Terrain/Terrain (16x16).png" type="Texture" id=7]
 [ext_resource path="res://Collectable.tscn" type="PackedScene" id=15]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )

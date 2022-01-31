@@ -1,18 +1,19 @@
 [gd_scene load_steps=57 format=2]
 
-[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Run (32x32).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/MainCharacters/Ninja Frog/Run (32x32).png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Idle (32x32).png" type="Texture" id=3]
-[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Jump (32x32).png" type="Texture" id=4]
-[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Hit (32x32).png" type="Texture" id=5]
-[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Fall (32x32).png" type="Texture" id=6]
-[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Double Jump (32x32).png" type="Texture" id=7]
-[ext_resource path="res://PixelAdventure/MainCharacters/Ninja Frog/Wall Jump (32x32).png" type="Texture" id=8]
+[ext_resource path="res://Sprites/MainCharacters/Ninja Frog/Idle (32x32).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/MainCharacters/Ninja Frog/Jump (32x32).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/MainCharacters/Ninja Frog/Hit (32x32).png" type="Texture" id=5]
+[ext_resource path="res://Sprites/MainCharacters/Ninja Frog/Fall (32x32).png" type="Texture" id=6]
+[ext_resource path="res://Sprites/MainCharacters/Ninja Frog/Double Jump (32x32).png" type="Texture" id=7]
+[ext_resource path="res://Sprites/MainCharacters/Ninja Frog/Wall Jump (32x32).png" type="Texture" id=8]
 [ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=9]
 [ext_resource path="res://Sounds/projectile.wav" type="AudioStream" id=10]
 [ext_resource path="res://Sounds/lose.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sounds/crush.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/coin.wav" type="AudioStream" id=13]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )

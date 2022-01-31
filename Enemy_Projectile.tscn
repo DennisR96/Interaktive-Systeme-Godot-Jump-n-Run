@@ -1,10 +1,11 @@
 [gd_scene load_steps=59 format=2]
 
-[ext_resource path="res://PixelAdventure/Enemies/Trunk/Attack (64x32).png" type="Texture" id=1]
-[ext_resource path="res://PixelAdventure/Enemies/Trunk/Idle (64x32).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Enemies/Trunk/Attack (64x32).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Enemies/Trunk/Idle (64x32).png" type="Texture" id=2]
 [ext_resource path="res://Enemy_Projectile.gd" type="Script" id=3]
-[ext_resource path="res://PixelAdventure/Enemies/Trunk/Run (64x32).png" type="Texture" id=4]
-[ext_resource path="res://PixelAdventure/Enemies/Trunk/Hit (64x32).png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Enemies/Trunk/Run (64x32).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Enemies/Trunk/Hit (64x32).png" type="Texture" id=5]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
