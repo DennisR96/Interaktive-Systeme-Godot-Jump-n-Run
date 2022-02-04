@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Desappear (44x30).png-05d2b7dedf3d7e9b315ab6dfdcc896a3.stex"
+path="res://.import/IS_Banner.png-a135a743f62b5e22d79e692e14ec8bcb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Enemies/Ghost/Desappear (44x30).png"
-dest_files=[ "res://.import/Desappear (44x30).png-05d2b7dedf3d7e9b315ab6dfdcc896a3.stex" ]
+source_file="res://Sprites/Schloss/IS_Banner.png"
+dest_files=[ "res://.import/IS_Banner.png-a135a743f62b5e22d79e692e14ec8bcb.stex" ]
 
 [params]
 

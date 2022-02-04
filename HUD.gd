@@ -52,6 +52,12 @@ func _on_NewLevel_body_entered(body):
 			yield(get_tree().create_timer(3.0), "timeout")
 			get_tree().change_scene("res://02_Level2.tscn")
 			$Message.hide()
+		elif (get_tree().get_current_scene().get_name() == "Level2"):
+			$Message.text = "Super, du hast das zweite Level bestanden! Mach dich fürs dritte Level bereit!."
+			$Message.show()
+			yield(get_tree().create_timer(3.0), "timeout")
+			get_tree().change_scene("res://03_Level3.tscn")
+			$Message.hide()
 	elif body.get_name() == "Player" and currentCollectables < collectablesInScene:
 		$Message.text = "Du hast noch nicht alle Kugeln eingesammelt."
 		$Message.show()

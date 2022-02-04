@@ -188,6 +188,9 @@ func ouchFallzone():
 		if position.x >= 2200:
 			position.x = 2392
 			position.y = 220
+	elif (get_tree().get_current_scene().get_name() == "Level3"):
+		position.x = 51
+		position.y = 240
 			
 	
 	playerHit = true
