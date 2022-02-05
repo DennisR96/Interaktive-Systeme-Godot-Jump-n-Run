@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/FallingPlattform.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Traps/Falling Platforms/On (32x10).png" type="Texture" id=2]
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "Falling"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.8 ),
+"transitions": PoolRealArray( 2, 2, 2, 2 ),
+"update": 0,
+"values": [ Vector2( 0.217319, 0 ), Vector2( 0, 40 ), Vector2( 0, 40 ), Vector2( 0.217319, 0 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 32, 10 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "flying",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.6232, 2.74594 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16.3873, 4.98377 )
+
+[node name="FallingPlattform" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Falling = SubResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 0.217319, 0 )
+collision_layer = 2
+collision_mask = 49
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 10.7465, 10.6908 )
+frames = SubResource( 8 )
+animation = "flying"
+frame = 3
+playing = true
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+position = Vector2( 10.5864, 6.76901 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 10.4473, 10.6547 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_entered"]
