@@ -19,7 +19,7 @@ func _ready():
 		$AnimatedSprite.flip_h = true
 	$floor_checker.position.x = $CollisionShape2D2.shape.get_extents().x * direction
 	$floor_checker.enabled = detects_cliffs
-
+	
 # Movements	
 func flying():
 		#velocity = Vector2.ZERO
@@ -32,12 +32,10 @@ func shoot():
 	var projectile_instance = PROJECTILE.instance()
 	projectile_instance.global_position = $Position2D.global_position
 	projec = randi() % 2
-	
 	if projec == 0:
 		projectile_instance.direction = 1
 	else:
 		projectile_instance.direction = -1
-	
 	get_parent().add_child(projectile_instance)
 	
 func walk(delta):
@@ -46,11 +44,8 @@ func walk(delta):
 		direction = direction * -1
 		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
 		$floor_checker.position.x = $CollisionShape2D2.shape.get_extents().x * direction
-	
 	velocity.y += 200
-	
 	velocity.x = SPEED_WALK * direction
-	print(velocity.x)
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 

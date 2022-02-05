@@ -163,60 +163,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Spielziel4" type="Label" parent="Game/Instructions/SpielzielPanel"]
-anchor_left = 0.502876
-anchor_top = 0.49538
-anchor_right = 0.502876
-anchor_bottom = 0.49538
-margin_left = 135.259
-margin_top = 24.4921
-margin_right = 189.259
-margin_bottom = 98.4921
-rect_pivot_offset = Vector2( 132.888, -212.182 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
-text = "Doppelsprung"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Spielziel3" type="Label" parent="Game/Instructions/SpielzielPanel"]
 anchor_left = 0.502876
 anchor_top = 0.49538
 anchor_right = 0.502876
 anchor_bottom = 0.49538
 margin_left = -70.297
-margin_top = -9.57188
+margin_top = -4.62342
 margin_right = 57.703
-margin_bottom = 64.4281
+margin_bottom = 69.3766
 rect_pivot_offset = Vector2( 132.888, -212.182 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
 text = "Hallo Froschkönig!
 
-Sammel alle Kugeln ein und kletter aus dem Brunnen."
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Spielziel2" type="Label" parent="Game/Instructions/SpielzielPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -67.8726
-margin_top = -217.341
-margin_right = 60.1274
-margin_bottom = -143.341
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
-text = "Besiege die  Steinwesen durch Sprung auf Ihren Kopf."
+Finde einen Weg aus dem Brunnen!"
 align = 1
 valign = 1
 autowrap = true
@@ -380,14 +341,11 @@ position = Vector2( 120, 8 )
 [node name="Enemy_AI4" parent="Game/Enemies" instance=ExtResource( 19 )]
 position = Vector2( 264.396, -1893.48 )
 
-[node name="Enemy_AI5" parent="Game/Enemies" instance=ExtResource( 19 )]
-position = Vector2( 272.975, -1562.19 )
-
 [node name="Enemy_AI3" parent="Game/Enemies" instance=ExtResource( 19 )]
 position = Vector2( 203.074, -1194.49 )
 
 [node name="Enemy_AI" parent="Game/Enemies" instance=ExtResource( 19 )]
-position = Vector2( 273.748, -853.196 )
+position = Vector2( 341.707, -889.931 )
 
 [node name="Enemy_Stone6" parent="Game/Enemies" instance=ExtResource( 20 )]
 position = Vector2( 325, -1736 )

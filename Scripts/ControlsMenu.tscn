@@ -8,7 +8,6 @@
 [ext_resource path="res://Sprites/Background/Yellow.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Background/Pink.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Menu/Text/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Scripts/ControlsMenu.gd" type="Script" id=9]
 [ext_resource path="res://Sprites/Menu/Buttons/Previous.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Menu/GeraldsKeys/SpaceKey.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Menu/GeraldsKeys/ArrowKeyUp.png" type="Texture" id=12]
@@ -21,6 +20,7 @@
 [ext_resource path="res://Sprites/Menu/GeraldsKeys/SKey.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/Menu/GeraldsKeys/TabKey.png" type="Texture" id=20]
 
+[sub_resource type="GDScript" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Blue"
@@ -172,7 +172,7 @@ font_data = ExtResource( 8 )
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

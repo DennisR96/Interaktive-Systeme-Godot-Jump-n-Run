@@ -8,7 +8,6 @@ export var detects_cliffs = true
 signal collectable_collected
 var PROJECTILE = preload("res://Scripts/Projectile_Enemy.tscn") 
 
-
 func _ready():
 	$AnimatedSprite.play("Idle")
 	if direction == -1:
@@ -72,10 +71,6 @@ func _on_Timer_timeout():
 	queue_free()
 	pass
 
-func _on_Shoot_Range_body_entered(body):
-	if body.get_name() == "Player":
-		print("shoot")
-	pass # Replace with function body.
 
 
 func _on_Timer2_timeout():

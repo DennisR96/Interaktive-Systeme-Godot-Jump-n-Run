@@ -11,18 +11,22 @@ func _ready():
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
+	
 	if player:
 		velocity = position.direction_to(player.position) * speed
 	velocity = move_and_slide(velocity)
-	# Animation der Richtung anpassen
-	if velocity.x < 0 and entered == 1:
-		$AnimatedSprite.flip_h = false
-	else:
-		$AnimatedSprite.flip_h = true	
+	
+	# Animation der Richtung anpassen	
+	if entered == 1:
+		if velocity.x < 0:
+			$AnimatedSprite.flip_h = false
+		else:
+			$AnimatedSprite.flip_h = true	
+		
 
 func _on_Area2D_body_entered(body):
-	entered = 1
 	if body.name == "Player":
+		entered = 1
 		player = body
 
 func _on_top_checker_body_entered(body):

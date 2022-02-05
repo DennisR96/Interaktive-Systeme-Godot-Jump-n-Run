@@ -3,11 +3,9 @@ extends Control
 func _ready():
 	$Control.visible = false
 	$Settings.visible = false
-	pass 
 
 func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/01_Level1.tscn")	
-	pass 
 
 func _on_Exit_pressed():
 	get_tree().quit()										

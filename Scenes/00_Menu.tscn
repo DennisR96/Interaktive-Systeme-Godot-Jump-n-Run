@@ -945,7 +945,7 @@ __meta__ = {
 [connection signal="pressed" from="Start/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Start/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Control/Option" to="." method="_on_Option_pressed"]
-[connection signal="pressed" from="Settings/Option2" to="." method="_on_Option_pressed"]
 [connection signal="pressed" from="Settings/Option2" to="." method="_on_Option2_pressed"]
+[connection signal="pressed" from="Settings/Option2" to="." method="_on_Option_pressed"]
 [connection signal="value_changed" from="Settings/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="Settings/HSlider2" to="." method="_on_HSlider2_value_changed"]

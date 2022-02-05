@@ -11,7 +11,7 @@
 [ext_resource path="res://Scripts/Enemy_Projectile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/Items/Froschkoenig_selbst_erstellt/EineKrohne.png" type="Texture" id=10]
 [ext_resource path="res://Scripts/Collectable.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Princess.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/Princess.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/Menu/Text/PressStart2P-Regular.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=14]
 [ext_resource path="res://Sprites/world_tileset.tres" type="TileSet" id=15]
@@ -101,19 +101,21 @@ __meta__ = {
 }
 
 [node name="Spielziel2" type="Label" parent="Game/Instructions/SpielzielPanel"]
-anchor_left = -0.054
-anchor_top = -0.611
-anchor_right = -0.054
-anchor_bottom = -0.611
-margin_left = -119.314
-margin_top = 114.333
-margin_right = -15.3138
-margin_bottom = 239.333
+anchor_left = -0.0454074
+anchor_top = -0.605253
+anchor_right = -0.0454074
+anchor_bottom = -0.605254
+margin_left = -95.5543
+margin_top = 27.2227
+margin_right = -0.554317
+margin_bottom = 152.223
 grow_horizontal = 0
 theme = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
-text = "Sammle alle Kugeln ein!"
+text = "Besiege die Hexe und befreie die Prinzessin!"
+align = 1
+valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -236,7 +238,7 @@ visible = false
 position = Vector2( 2092.39, 230.722 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 50.9927, 226.586 )
+position = Vector2( 26.2161, 235.516 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 position = Vector2( 0.800995, 47.2675 )

@@ -20,7 +20,6 @@
 [ext_resource path="res://Sprites/world_tileset.tres" type="TileSet" id=18]
 [ext_resource path="res://Sprites/Menu/Icons/Herz_Icon.png" type="Texture" id=19]
 
-
 [sub_resource type="TileSet" id=1]
 0/name = "Blue"
 0/texture = ExtResource( 14 )

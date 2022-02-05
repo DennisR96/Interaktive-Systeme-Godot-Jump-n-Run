@@ -43,17 +43,9 @@ func _on_Player_player_hit():
 func _on_NewLevel_body_entered(body):
 	if body.get_name() == "Player":
 		if (get_tree().get_current_scene().get_name() == "Level1"):
-			#$Message.text = "Super, du hast das erste Level bestanden! Mach dich fürs zweite Level bereit!."
-			$Message.show()
-			#yield(get_tree().create_timer(0.5), "timeout")
 			get_tree().change_scene("res://Scenes/02_Level2.tscn")
-			$Message.hide()
 		elif (get_tree().get_current_scene().get_name() == "Level2"):
-			$Message.text = "Super, du hast das zweite Level bestanden! Mach dich fürs dritte Level bereit!."
-			$Message.show()
-			#yield(get_tree().create_timer(3.0), "timeout")
 			get_tree().change_scene("res://Scenes/03_Level3.tscn")
-			$Message.hide()
 
 
 func _on_Player_shooting():
