@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EineKrohne.png-b0a0a7315c3b2084fe0444ca3f0a6de2.stex"
+path="res://.import/Princess_Idle.png-7bd4726d77c5ba3d1cdc9981ed173a5a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Items/Froschkoenig_selbst_erstellt/EineKrohne.png"
-dest_files=[ "res://.import/EineKrohne.png-b0a0a7315c3b2084fe0444ca3f0a6de2.stex" ]
+source_file="res://Sprites/MainCharacters/Princess_Idle.png"
+dest_files=[ "res://.import/Princess_Idle.png-7bd4726d77c5ba3d1cdc9981ed173a5a.stex" ]
 
 [params]
 

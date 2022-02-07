@@ -186,15 +186,22 @@ func ouchFallzone():
 		if position.x < 1700:
 			position.x = 432
 			position.y = 240
-		if position.x >= 1700 and position.x < 2200:
+		elif position.x >= 1700 and position.x < 2200:
 			position.x = 1860
 			position.y = 272
-		if position.x >= 2200:
+		elif position.x >= 2200:
 			position.x = 2392
 			position.y = 220
 	elif (get_tree().get_current_scene().get_name() == "Level3"):
-		position.x = 51
-		position.y = 240
+		if position.x < 800:
+			position.x = 51
+			position.y = 240
+		elif position.x >= 800 and position.x < 1248:
+			position.x = 808
+			position.y = 190
+		elif position.x >= 1248:
+			position.x = 1248
+			position.y = 240
 			
 	
 	playerHit = true
@@ -209,7 +216,6 @@ func ouchProjectile():
 
 func _on_Timer_timeout():
 	playerHit = false
-
 
 func _on_collectable_collected():
 	collectables += 1

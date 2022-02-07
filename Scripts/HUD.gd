@@ -1,14 +1,17 @@
 extends CanvasLayer
 
-var max_available_projectiles = 3
 var currentCollectables = 0
+var collectablesInScene = 15
 var available_projectile = 0
+var max_available_projectiles = collectablesInScene / 5
 var lifes = 3
 
 func _ready():
-	$Collectables.text = "00/0" + String(max_available_projectiles)
+	$Collectables.text = "00/" + String(collectablesInScene)
 	$Lifes.text = "0" + String(lifes)
+	$Projectiles.text = String(available_projectile) + "/" + String(max_available_projectiles)
 	$Message.hide()
+	$DarkerDisplay.hide()
 	$Panel.show()
 	$TextureRect.show()
 	$x.show()
@@ -16,20 +19,28 @@ func _ready():
 	$TextureRect2.show()
 	$x2.show()
 	$Lifes.show()
+	$TextureRect3.show()
+	$x3.show()
+	$Projectiles.show()
 
 func _physics_process(delta):
 	if lifes == 0:
-		$Message.text = "Game Over! Versuche es erneut"
+		$Message.text = "Game Over! Versuche es erneut."
 		$Message.show()
-		yield(get_tree().create_timer(2.0), "timeout")
+		$DarkerDisplay.show()
+		yield(get_tree().create_timer(5.0), "timeout")
 		get_tree().reload_current_scene()
 
 func _on_collectable_collected():
 	currentCollectables = currentCollectables + 1
-	#print(5 % currentCollectables)
+	if currentCollectables < 10:
+		$Collectables.text = "0" + String(currentCollectables) + "/" + String(collectablesInScene)
+	else:
+		$Collectables.text = String(currentCollectables) + "/" + String(collectablesInScene)
+	
 	if currentCollectables % 5 == 0:
 		available_projectile +=1
-		$Collectables.text = "0" + String(available_projectile) + "/0" + String(max_available_projectiles)
+		$Projectiles.text = String(available_projectile) + "/" + String(max_available_projectiles)
 	
 func _on_Player_player_hit():
 	lifes = lifes - 1
@@ -49,7 +60,6 @@ func _on_NewLevel_body_entered(body):
 
 
 func _on_Player_shooting():
-	currentCollectables -= 5 
+	#currentCollectables -= 5 
 	available_projectile -= 1
-	$Collectables.text = "0" + String(available_projectile) + "/0" + String(max_available_projectiles)
-	pass # Replace with function body.
+	$Projectiles.text = String(available_projectile) + "/" + String(max_available_projectiles)
