@@ -116,26 +116,26 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StreamTexture" id=19]
+[sub_resource type="StreamTexture" id=14]
 load_path = "res://.import/EineGoldeneKugel.png-ba22b03540a2514809ebce24983deab6.stex"
 
-[sub_resource type="DynamicFont" id=14]
-size = 8
-font_data = ExtResource( 13 )
-
 [sub_resource type="DynamicFont" id=15]
+size = 8
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 0, 0, 0, 0.784314 )
-
 [sub_resource type="DynamicFont" id=17]
 font_data = ExtResource( 13 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 0, 0, 0.784314 )
+
+[sub_resource type="DynamicFont" id=19]
+font_data = ExtResource( 13 )
+
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 56, 96 )
 
 [node name="Level1" type="Node2D"]
@@ -169,7 +169,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Spielziel3" type="Label" parent="Game/Instructions/SpielzielPanel"]
+[node name="Spielziel" type="Label" parent="Game/Instructions/SpielzielPanel"]
 anchor_left = 0.502876
 anchor_top = 0.49538
 anchor_right = 0.502876
@@ -184,6 +184,67 @@ custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
 text = "Hallo Froschkönig!
 
 Finde einen Weg aus dem Brunnen!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anweisung" type="Label" parent="Game/Instructions/SpielzielPanel"]
+anchor_left = 0.502876
+anchor_top = 0.49538
+anchor_right = 0.502876
+anchor_bottom = 0.49538
+margin_left = -51.5304
+margin_top = -171.741
+margin_right = 52.4696
+margin_bottom = -97.7413
+rect_pivot_offset = Vector2( 132.888, -212.182 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
+text = "Springe Gegnern auf den Kopf"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anweisung2" type="Label" parent="Game/Instructions/SpielzielPanel"]
+anchor_left = 0.502876
+anchor_top = 0.49538
+anchor_right = 0.502876
+anchor_bottom = 0.49538
+margin_left = 40.4696
+margin_top = -351.741
+margin_right = 144.47
+margin_bottom = -277.741
+rect_pivot_offset = Vector2( 132.888, -212.182 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
+text = "5 goldene Kugeln = 
+1 Schuss mit der Krone"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anweisung3" type="Label" parent="Game/Instructions/SpielzielPanel"]
+anchor_left = 0.502876
+anchor_top = 0.49538
+anchor_right = 0.502876
+anchor_bottom = 0.49538
+margin_left = -103.53
+margin_top = -851.741
+margin_right = 0.469639
+margin_bottom = -777.741
+rect_pivot_offset = Vector2( 132.888, -212.182 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 0.694118 )
+text = "Aufpassen, hier gibts Fledermäuse!"
 align = 1
 valign = 1
 autowrap = true
@@ -283,7 +344,7 @@ __meta__ = {
 [node name="Collectables" type="Node2D" parent="Game"]
 
 [node name="Collectable1" parent="Game/Collectables" instance=ExtResource( 11 )]
-position = Vector2( 230.732, 260.929 )
+position = Vector2( 232, 252 )
 
 [node name="Collectable2" parent="Game/Collectables" instance=ExtResource( 11 )]
 position = Vector2( 112, -288 )
@@ -335,9 +396,6 @@ position = Vector2( 208, -136 )
 [node name="Enemy_Stone2" parent="Game/Enemies" instance=ExtResource( 20 )]
 position = Vector2( 352, -264 )
 
-[node name="Enemy_Stone3" parent="Game/Enemies" instance=ExtResource( 20 )]
-position = Vector2( 32.4328, -729.545 )
-
 [node name="Enemy_Stone4" parent="Game/Enemies" instance=ExtResource( 20 )]
 position = Vector2( 375.886, -745.125 )
 
@@ -345,7 +403,7 @@ position = Vector2( 375.886, -745.125 )
 position = Vector2( 120, 8 )
 
 [node name="Enemy_AI" parent="Game/Enemies" instance=ExtResource( 19 )]
-position = Vector2( 341.707, -889.931 )
+position = Vector2( 208, -768 )
 
 [node name="Enemy_Stone6" parent="Game/Enemies" instance=ExtResource( 20 )]
 position = Vector2( 325, -1736 )
@@ -402,7 +460,7 @@ position = Vector2( 264, -1368 )
 position = Vector2( 203.89, -1440 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 92, 256 )
+position = Vector2( 84, 256 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 position = Vector2( 7.07428, 29.2563 )
@@ -450,56 +508,55 @@ script = ExtResource( 14 )
 [node name="Panel" type="Panel" parent="Game/HUD"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 360.0
-margin_bottom = 49.0
+margin_right = 336.0
+margin_bottom = 40.0
 custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Game/HUD"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 52.0
-margin_bottom = 52.0
+[node name="TextureRect" type="TextureRect" parent="Game/HUD/Panel"]
+margin_left = -4.0
+margin_top = -8.0
+margin_right = 44.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( -8, 4.99068 )
-texture = SubResource( 19 )
+texture = SubResource( 14 )
 expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="x" type="Label" parent="Game/HUD"]
-margin_left = 44.0
-margin_top = 24.0
-margin_right = 52.0
-margin_bottom = 32.0
+[node name="x" type="Label" parent="Game/HUD/Panel"]
+margin_left = 36.0
+margin_top = 12.0
+margin_right = 44.0
+margin_bottom = 20.0
 rect_pivot_offset = Vector2( -48, -15.0093 )
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Collectables" type="Label" parent="Game/HUD"]
-margin_left = 56.0
-margin_top = 16.0
-margin_right = 136.0
-margin_bottom = 40.0
+[node name="Collectables" type="Label" parent="Game/HUD/Panel"]
+margin_left = 48.0
+margin_top = 4.0
+margin_right = 128.0
+margin_bottom = 28.0
 rect_pivot_offset = Vector2( -60, -7.00932 )
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 text = "##/##"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="Game/HUD"]
-margin_left = 272.0
-margin_top = 12.0
-margin_right = 304.0
-margin_bottom = 44.0
+[node name="TextureRect2" type="TextureRect" parent="Game/HUD/Panel"]
+margin_left = 244.0
+margin_right = 276.0
+margin_bottom = 32.0
 texture = ExtResource( 16 )
 expand = true
 stretch_mode = 5
@@ -507,34 +564,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="x2" type="Label" parent="Game/HUD"]
-margin_left = 304.0
-margin_top = 24.0
-margin_right = 312.0
-margin_bottom = 32.0
-custom_fonts/font = SubResource( 14 )
+[node name="x2" type="Label" parent="Game/HUD/Panel"]
+margin_left = 276.0
+margin_top = 12.0
+margin_right = 284.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 15 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lifes" type="Label" parent="Game/HUD"]
-margin_left = 316.0
-margin_top = 16.0
-margin_right = 348.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 16 )
+[node name="Lifes" type="Label" parent="Game/HUD/Panel"]
+margin_left = 288.0
+margin_top = 4.0
+margin_right = 320.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 17 )
 text = "##"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect3" type="TextureRect" parent="Game/HUD"]
-margin_left = 156.0
-margin_top = 16.0
-margin_right = 188.0
-margin_bottom = 52.0
+[node name="TextureRect3" type="TextureRect" parent="Game/HUD/Panel"]
+margin_left = 148.0
+margin_top = 4.0
+margin_right = 180.0
+margin_bottom = 40.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 5
@@ -542,24 +599,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="x3" type="Label" parent="Game/HUD"]
-margin_left = 192.0
-margin_top = 24.0
-margin_right = 200.0
-margin_bottom = 32.0
-custom_fonts/font = SubResource( 14 )
+[node name="x3" type="Label" parent="Game/HUD/Panel"]
+margin_left = 184.0
+margin_top = 12.0
+margin_right = 192.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 15 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Projectiles" type="Label" parent="Game/HUD"]
-margin_left = 204.0
-margin_top = 16.0
-margin_right = 252.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 15 )
-text = "#/#"
+[node name="Projectiles" type="Label" parent="Game/HUD/Panel"]
+margin_left = 196.0
+margin_top = 4.0
+margin_right = 244.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 16 )
+text = "##"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -569,7 +626,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 20 )
+custom_styles/panel = SubResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -577,14 +634,14 @@ __meta__ = {
 [node name="Message" type="Label" parent="Game/HUD"]
 visible = false
 anchor_left = 0.5
-anchor_top = 0.503704
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.503704
-margin_left = -112.0
+anchor_bottom = 0.5
+margin_left = -144.0
 margin_top = -64.0
-margin_right = 112.0
+margin_right = 144.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Super! Du hast alle Gegenstände eingesammelt!"
 align = 1
@@ -605,7 +662,7 @@ bus = "Music"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/NewLevel"]
 position = Vector2( 239.217, -2096 )
-shape = SubResource( 18 )
+shape = SubResource( 20 )
 
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/Player" method="_on_collectable_collected"]
 [connection signal="collectable_collected" from="Game/Collectables/Collectable1" to="Game/HUD" method="_on_collectable_collected"]
