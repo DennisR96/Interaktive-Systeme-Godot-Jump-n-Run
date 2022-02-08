@@ -77,7 +77,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_top_checker_body_entered(body):
 	if body.name == "Player":
-		stage += 1	
+		
 		$AnimatedSprite.play("Damage")
 		dead()
 		velocity = move_and_slide(Vector2.ZERO)
@@ -98,6 +98,7 @@ func _on_sides_checker_body_entered(body):
 	
 # Für zum Beispiel das Projketil
 func dead():
+
 	SPEED = 0
 	set_collision_layer_bit(4, false)
 	set_collision_mask_bit(0, false)
@@ -106,6 +107,7 @@ func dead():
 	$sides_checker.set_collision_layer_bit(4, false)
 	$sides_checker.set_collision_mask_bit(0, false)
 	yield(get_tree().create_timer(1),'timeout')
+	stage += 1	
 	if stage < 3:
 		set_collision_layer_bit(4, true)
 		set_collision_mask_bit(0, true)
@@ -115,6 +117,7 @@ func dead():
 		$sides_checker.set_collision_mask_bit(0, true)
 	if stage >= 3:
 		queue_free()
+	
 
 
 

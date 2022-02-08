@@ -24,7 +24,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Enemy" parent="." instance=ExtResource( 4 )]
+[node name="Enemy_Final" parent="." instance=ExtResource( 4 )]
 position = Vector2( 275.043, 118.964 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

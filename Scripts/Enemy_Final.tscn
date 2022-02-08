@@ -225,6 +225,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 42 )
 animation = "Charge"
+frame = 2
 playing = true
 
 [node name="floor_checker" type="RayCast2D" parent="."]
