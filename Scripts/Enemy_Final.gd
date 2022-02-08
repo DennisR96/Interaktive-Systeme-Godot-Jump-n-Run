@@ -5,6 +5,7 @@ var SPEED_WALK = 500
 var velocity = Vector2()
 var player = null
 export var direction = -1
+var timeout
 var dead = false
 var stage = 0
 var PROJECTILE = preload("res://Scripts/Projectile_Enemy.tscn") 
@@ -78,6 +79,7 @@ func _on_top_checker_body_entered(body):
 	if body.name == "Player":
 		stage += 1	
 		$AnimatedSprite.play("Damage")
+		dead()
 		velocity = move_and_slide(Vector2.ZERO)
 		SPEED = 0
 		body.bounce()	
@@ -104,7 +106,15 @@ func dead():
 	$sides_checker.set_collision_layer_bit(4, false)
 	$sides_checker.set_collision_mask_bit(0, false)
 	yield(get_tree().create_timer(1),'timeout')
-	queue_free()
+	if stage < 3:
+		set_collision_layer_bit(4, true)
+		set_collision_mask_bit(0, true)
+		$top_checker.set_collision_layer_bit(4, true)
+		$top_checker.set_collision_mask_bit(0, true)
+		$sides_checker.set_collision_layer_bit(4, true)
+		$sides_checker.set_collision_mask_bit(0, true)
+	if stage >= 3:
+		queue_free()
 
 
 

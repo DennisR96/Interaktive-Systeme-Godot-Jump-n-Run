@@ -110,10 +110,10 @@ __meta__ = {
 }
 
 [node name="Spielziel" type="Label" parent="Game/Instructions/SpielzielPanel"]
-anchor_left = -0.0454074
-anchor_top = -0.605254
-anchor_right = -0.0454074
-anchor_bottom = -0.605254
+anchor_left = -0.0395549
+anchor_top = -0.592713
+anchor_right = -0.0395549
+anchor_bottom = -0.592713
 margin_left = -123.551
 margin_top = 1.89422
 margin_right = -8.55081
@@ -303,7 +303,7 @@ visible = false
 position = Vector2( 3079.32, 237.944 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 72, 240.307 )
+position = Vector2( 2818, 194.657 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 position = Vector2( 0.800995, 47.2675 )

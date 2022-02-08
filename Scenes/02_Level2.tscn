@@ -107,30 +107,30 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 1204, 8 )
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 0.219608 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StreamTexture" id=19]
+[sub_resource type="StreamTexture" id=11]
 load_path = "res://.import/EineGoldeneKugel.png-ba22b03540a2514809ebce24983deab6.stex"
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=12]
 size = 8
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=13]
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=14]
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0, 0, 0, 0.784314 )
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 13 )
 
 [sub_resource type="RectangleShape2D" id=17]
@@ -378,7 +378,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 336.0
 margin_bottom = 40.0
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -389,7 +389,7 @@ margin_top = -8.0
 margin_right = 44.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -8, 4.99068 )
-texture = SubResource( 19 )
+texture = SubResource( 11 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -402,7 +402,7 @@ margin_top = 12.0
 margin_right = 44.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( -48, -15.0093 )
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 12 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -414,7 +414,7 @@ margin_top = 4.0
 margin_right = 128.0
 margin_bottom = 28.0
 rect_pivot_offset = Vector2( -60, -7.00932 )
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 13 )
 text = "##/##"
 valign = 1
 __meta__ = {
@@ -437,7 +437,7 @@ margin_left = 276.0
 margin_top = 12.0
 margin_right = 284.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 12 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -448,7 +448,7 @@ margin_left = 288.0
 margin_top = 4.0
 margin_right = 320.0
 margin_bottom = 28.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -472,7 +472,7 @@ margin_left = 184.0
 margin_top = 12.0
 margin_right = 192.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 12 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -483,7 +483,7 @@ margin_left = 196.0
 margin_top = 4.0
 margin_right = 244.0
 margin_bottom = 28.0
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 13 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -494,7 +494,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 23 )
+custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -509,7 +509,7 @@ margin_left = -144.0
 margin_top = -64.0
 margin_right = 144.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Super! Du hast alle Gegenstände eingesammelt!"
 align = 1

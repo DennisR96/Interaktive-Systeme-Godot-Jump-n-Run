@@ -9,64 +9,64 @@
 [ext_resource path="res://Sprites/EndgegnerWitch/IS_Witch_Damage.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 46, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 92, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 138, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 184, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 230, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 276, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 322, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 368, 104, 46 )
-
-[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 32, 48 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 48, 32, 48 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 96, 32, 48 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 144, 32, 48 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 192, 32, 48 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 240, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 46, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 92, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 138, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 184, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 230, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 276, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 322, 104, 46 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 368, 104, 46 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 3 )
@@ -174,14 +174,14 @@ region = Rect2( 0, 432, 32, 48 )
 
 [sub_resource type="SpriteFrames" id=42]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "New Anim",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "New Anim",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
@@ -209,21 +209,22 @@ animations = [ {
 extents = Vector2( 116.716, 114.031 )
 
 [sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 12.6173, 6.54558 )
+extents = Vector2( 9.36801, 2.21229 )
 
 [sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 13.4484, 8.68628 )
+extents = Vector2( 17.8599, 8.68628 )
 
 [sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 13.2474, 13.5954 )
+extents = Vector2( 13.6029, 12.6637 )
 
 [node name="Enemy" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 35
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 42 )
 animation = "Charge"
-frame = 3
 playing = true
 
 [node name="floor_checker" type="RayCast2D" parent="."]
@@ -234,7 +235,7 @@ collision_mask = 2
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -1.35147, -36.1496 )
+position = Vector2( -1.35147, -35.7301 )
 shape = SubResource( 43 )
 
 [node name="top_checker" type="Area2D" parent="."]
@@ -242,7 +243,7 @@ collision_layer = 16
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top_checker"]
-position = Vector2( -1.78466, -9.13716 )
+position = Vector2( -1.0854, -9.2304 )
 shape = SubResource( 44 )
 
 [node name="sides_checker" type="Area2D" parent="."]
@@ -250,7 +251,7 @@ collision_layer = 0
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sides_checker"]
-position = Vector2( -0.486961, 5.57888 )
+position = Vector2( -0.626812, 3.76081 )
 shape = SubResource( 45 )
 
 [node name="Timer2" type="Timer" parent="."]
@@ -265,7 +266,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -0.584003, -0.0842628 )
+position = Vector2( -0.630619, 7.1414 )
 shape = SubResource( 46 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
