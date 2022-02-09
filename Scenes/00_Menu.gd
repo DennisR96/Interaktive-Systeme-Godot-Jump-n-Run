@@ -14,6 +14,7 @@ func _on_Exit_pressed():
 
 func _on_Controls_pressed():
 	$Control.visible = true
+	
 
 func _on_Settings_pressed():
 	$Settings.visible = true

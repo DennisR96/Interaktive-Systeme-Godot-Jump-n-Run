@@ -56,13 +56,13 @@ func _on_Player_player_hit():
 func _on_NewLevel_body_entered(body):
 	if body.get_name() == "Player":
 		if (get_tree().get_current_scene().get_name() == "Level1"):
-			$Message.text = "Super! Du hast das Level bestanden. Bereite sich aufs zweite Level vor."
+			$Message.text = "Level 1 bestanden!"
 			$Message.show()
 			$DarkerDisplay.show()
 			yield(get_tree().create_timer(3.0), "timeout")
 			get_tree().change_scene("res://Scenes/02_Level2.tscn")
 		elif (get_tree().get_current_scene().get_name() == "Level2"):
-			$Message.text = "Super! Du hast das Level bestanden. Bereite sich aufs dritte Level vor."
+			$Message.text = "Level 2 bestanden!"
 			$Message.show()
 			$DarkerDisplay.show()
 			yield(get_tree().create_timer(3.0), "timeout")
