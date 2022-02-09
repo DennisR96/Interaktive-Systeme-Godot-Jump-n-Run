@@ -9,7 +9,7 @@ func _physics_process(delta):
 	if not is_instance_valid($Game/Enemies/Enemy_Final):
 		$Game/Princess.visible = true
 		if not game_over:
-			$HUD/Message.text = "Super! Du hast die Prinzessin gerettet! Drücke ESC um zum Menü zurückzukehren."
+			$HUD/Message.text = "Du hast die Prinzessin gerettet! Drücke ESC um zum Menü zurückzukehren."
 			$HUD/Message.show()
 			$HUD/DarkerDisplay.show()
 			game_over = true

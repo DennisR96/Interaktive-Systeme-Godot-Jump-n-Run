@@ -3,6 +3,8 @@ extends Control
 func _ready():
 	$Control.visible = false
 	$Settings.visible = false
+	yield(get_tree().create_timer(3.0), "timeout")
+	$SplashScreen.visible = false;
 
 func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/01_Level1.tscn")	
