@@ -13,7 +13,7 @@ var playerHit = false
 signal player_hit
 signal shooting
 
-var can_fire = false
+var can_fire = true
 var PROJECTILE = preload("res://Scripts/Projectile.tscn")
 
 var velocity = Vector2(0,0)

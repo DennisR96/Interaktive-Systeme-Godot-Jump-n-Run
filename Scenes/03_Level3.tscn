@@ -303,7 +303,7 @@ visible = false
 position = Vector2( 3079.32, 237.944 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 2857.92, 168.853 )
+position = Vector2( 47.3797, 238.17 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 position = Vector2( 0.800995, 47.2675 )
