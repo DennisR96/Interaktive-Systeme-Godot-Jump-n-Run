@@ -148,7 +148,6 @@ func ouch(var enemyPosX):
 		velocity.x = -400
 	elif position.x > enemyPosX:
 		velocity.x = 400
-	
 	$Timer.start()
 	
 func ouchWallSpikes():

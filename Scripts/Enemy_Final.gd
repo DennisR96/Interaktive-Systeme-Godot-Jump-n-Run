@@ -39,7 +39,7 @@ func shoot():
 		projectile_instance.direction = -1
 	get_parent().add_child(projectile_instance)
 	
-func walk(delta):
+func walk():
 	var velocity = Vector2()
 	if is_on_wall() or not $floor_checker.is_colliding() and detects_cliffs and is_on_floor():
 		direction = direction * -1
@@ -63,7 +63,7 @@ func _physics_process(delta):
 	
 	# Stage 2 - Walking fast
 	if stage == 2:
-		walk(delta)
+		walk()
 	
 	# Animation der Richtung anpassen
 	if velocity.x < 0:
