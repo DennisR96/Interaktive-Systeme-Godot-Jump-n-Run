@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TitelbildPNG.png-ee682c47eaf312510c34778d19775bcf.stex"
+path="res://.import/Titelbild_Spiel.png-601ea55498e03034aba4d65797e1cdca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Menu/TitelbildPNG.png"
-dest_files=[ "res://.import/TitelbildPNG.png-ee682c47eaf312510c34778d19775bcf.stex" ]
+source_file="res://Sprites/Menu/Titelbild_Spiel.png"
+dest_files=[ "res://.import/Titelbild_Spiel.png-601ea55498e03034aba4d65797e1cdca.stex" ]
 
 [params]
 
